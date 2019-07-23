@@ -14,4 +14,7 @@ class PlantillaControlador extends Controlador
 	public function vista404(){
 		require 'vistas/plantilla/404.php';
 	}
+	public function login(){
+		require 'vistas/login/login.php';
+	}
 }

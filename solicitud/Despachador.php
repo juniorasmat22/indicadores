@@ -19,7 +19,9 @@ class Despachador{
 			}
 		}else{
 			// [21] Crea objetos de UsuarioModelo - Usuario, y asigna una url para la vista
-			$controlador = new controladores\UsuarioControlador();
+			//$controlador = new controladores\UsuarioControlador();
+			//$controlador->login();
+			$controlador=new controladores\PlantillaControlador();
 			$controlador->login();
 		}
 	}

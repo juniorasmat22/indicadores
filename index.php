@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>hola</title>
-  </head>
-  <body>
-
-  </body>
-</html>
+<?php
+require __DIR__ . '/Cargador.php';
+Cargador::cargar();
+session_start();
+$despachador=new solicitud\Despachador();
+$despachador->despachar();

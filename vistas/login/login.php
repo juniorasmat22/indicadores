@@ -7,10 +7,10 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Oficina de Calidad-Enfermería UNT</title>
 
   <!-- Favicons -->
-  <link href="recursos/dashio/img/favicon.png" rel="icon">
+  <link href="recursos/dashio/img/enfermeria.png" rel="icon">
   <link href="recursos/dashio/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->

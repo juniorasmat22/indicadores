@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Persona` (
   `apellido` VARCHAR(50) NULL,
   `dni` VARCHAR(8) NULL,
   PRIMARY KEY (`idPersona`),
-  UNIQUE INDEX `dni_UNIQUE` (`dni` ASC) VISIBLE)
+  UNIQUE INDEX `dni_UNIQUE` (`dni` ASC))
 ENGINE = InnoDB;
 
 
@@ -35,10 +35,9 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Usuario` (
   `idPersona` INT NOT NULL,
   `usuario` VARCHAR(45) NULL,
   `pass` VARCHAR(45) NULL,
-  `estado` VARCHAR(45) NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idUsuario`),
-  INDEX `fk_Usuario_Persona_idx` (`idPersona` ASC) VISIBLE,
+  INDEX `fk_Usuario_Persona_idx` (`idPersona` ASC) ,
   CONSTRAINT `fk_Usuario_Persona`
     FOREIGN KEY (`idPersona`)
     REFERENCES `enfermeriaUNT`.`Persona` (`idPersona`)
@@ -58,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Empresa` (
   `rubro` VARCHAR(200) NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idEmpresa`),
-  INDEX `fk_Empresa_Usuario1_idx` (`idUsuario` ASC) VISIBLE,
+  INDEX `fk_Empresa_Usuario1_idx` (`idUsuario` ASC) ,
   CONSTRAINT `fk_Empresa_Usuario1`
     FOREIGN KEY (`idUsuario`)
     REFERENCES `enfermeriaUNT`.`Usuario` (`idUsuario`)
@@ -77,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`UnidadNegocio` (
   `descripcion` MEDIUMTEXT NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idUnidadNegocio`),
-  INDEX `fk_UnidadNegocio_Empresa1_idx` (`idEmpresa` ASC) VISIBLE,
+  INDEX `fk_UnidadNegocio_Empresa1_idx` (`idEmpresa` ASC) ,
   CONSTRAINT `fk_UnidadNegocio_Empresa1`
     FOREIGN KEY (`idEmpresa`)
     REFERENCES `enfermeriaUNT`.`Empresa` (`idEmpresa`)
@@ -98,8 +97,8 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`MapaProcesos` (
   `fecha` DATETIME NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idMapaProcesos`),
-  INDEX `fk_MapaProcesos_Empresa1_idx` (`idEmpresa` ASC) VISIBLE,
-  INDEX `fk_MapaProcesos_UnidadNegocio1_idx` (`idUnidadNegocio` ASC) VISIBLE,
+  INDEX `fk_MapaProcesos_Empresa1_idx` (`idEmpresa` ASC) ,
+  INDEX `fk_MapaProcesos_UnidadNegocio1_idx` (`idUnidadNegocio` ASC) ,
   CONSTRAINT `fk_MapaProcesos_Empresa1`
     FOREIGN KEY (`idEmpresa`)
     REFERENCES `enfermeriaUNT`.`Empresa` (`idEmpresa`)
@@ -124,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Proceso` (
   `descripcion` TEXT NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idProceso`),
-  INDEX `fk_Proceso_MapaProcesos1_idx` (`idMapaProcesos` ASC) VISIBLE,
+  INDEX `fk_Proceso_MapaProcesos1_idx` (`idMapaProcesos` ASC) ,
   CONSTRAINT `fk_Proceso_MapaProcesos1`
     FOREIGN KEY (`idMapaProcesos`)
     REFERENCES `enfermeriaUNT`.`MapaProcesos` (`idMapaProcesos`)
@@ -142,17 +141,17 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`SubProceso` (
   `nombre` VARCHAR(50) NULL,
   `descripcion` TEXT NULL,
   `estado` BIT(1) NULL,
-  `idSubProceso` INT NULL,
+  `idSubPro` INT NULL,
   PRIMARY KEY (`idSubProceso`),
-  INDEX `fk_SubProceso_Proceso1_idx` (`idProceso` ASC) VISIBLE,
-  INDEX `fk_SubProceso_SubProceso1_idx` (`idSubProceso` ASC) VISIBLE,
+  INDEX `fk_SubProceso_Proceso1_idx` (`idProceso` ASC) ,
+  INDEX `fk_SubProceso_SubProceso1_idx` (`idSubProceso` ASC) ,
   CONSTRAINT `fk_SubProceso_Proceso1`
     FOREIGN KEY (`idProceso`)
     REFERENCES `enfermeriaUNT`.`Proceso` (`idProceso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_SubProceso_SubProceso1`
-    FOREIGN KEY (`idSubProceso`)
+    FOREIGN KEY (`idSubPro`)
     REFERENCES `enfermeriaUNT`.`SubProceso` (`idSubProceso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -179,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Indicador` (
   `amarillo` INT(3) NULL,
   `verde` INT(3) NULL,
   PRIMARY KEY (`idIndicador`),
-  INDEX `fk_Indicador_SubProceso1_idx` (`idSubProceso` ASC) VISIBLE,
+  INDEX `fk_Indicador_SubProceso1_idx` (`idSubProceso` ASC) ,
   CONSTRAINT `fk_Indicador_SubProceso1`
     FOREIGN KEY (`idSubProceso`)
     REFERENCES `enfermeriaUNT`.`SubProceso` (`idSubProceso`)
@@ -201,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`formula` (
   `param3` INT(11) NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idformula`),
-  INDEX `fk_formula_Indicador1_idx` (`idIndicador` ASC) VISIBLE,
+  INDEX `fk_formula_Indicador1_idx` (`idIndicador` ASC) ,
   CONSTRAINT `fk_formula_Indicador1`
     FOREIGN KEY (`idIndicador`)
     REFERENCES `enfermeriaUNT`.`Indicador` (`idIndicador`)
@@ -225,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`fuente` (
   `fin` DATE NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`idfuente`),
-  INDEX `fk_fuente_Indicador1_idx` (`idIndicador` ASC) VISIBLE,
+  INDEX `fk_fuente_Indicador1_idx` (`idIndicador` ASC) ,
   CONSTRAINT `fk_fuente_Indicador1`
     FOREIGN KEY (`idIndicador`)
     REFERENCES `enfermeriaUNT`.`Indicador` (`idIndicador`)

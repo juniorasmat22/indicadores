@@ -19,7 +19,7 @@ class Persona extends Entidad
 		$statement->bindValue(1,$this->idPersona,PDO::PARAM_INT);
 		$statement->bindValue(2,$this->nombre,PDO::PARAM_STR);
 		$statement->bindValue(3,$this->apellido,PDO::PARAM_STR);
-		$statement->bindValue(4,$this->dni,PDO::PARAM_INT);
+		$statement->bindValue(4,$this->dni,PDO::PARAM_STR);
 
 		return $statement;
 	}

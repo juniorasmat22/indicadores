@@ -24,7 +24,7 @@ class MapaProcesos extends Entidad{
     $statement->bindValue(3,$this->idUnidadNegocio,PDO::PARAM_INT);
     $statement->bindValue(4,$this->nombre,PDO::PARAM_STR);
     $statement->bindValue(5,$this->descripcion,PDO::PARAM_STR);
-    $statement->bindValue(6,$this->date("Y-m-d H:i:s", strtotime($this->fecha)),PDO::PARAM_STR);
+    $statement->bindValue(6,date("Y-m-d H:i:s", strtotime($this->fecha)),PDO::PARAM_STR);
     $statement->bindValue(7,$this->estado,PDO::PARAM_INT);
     return $statement;
   }

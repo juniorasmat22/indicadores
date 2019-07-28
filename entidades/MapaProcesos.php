@@ -30,7 +30,7 @@ class MapaProcesos extends Entidad{
   }
 
   public function set($metodo){
-    $this->idMapaProcesos 	 = $metodo('idMapaProcesos ');
+    $this->idMapaProcesos 	 = $metodo('idMapaProcesos');
     $this->idEmpresa	       = $metodo('idEmpresa');
     $this->idUnidadNegocio	 = $metodo('idUnidadNegocio');
     $this->nombre            = $metodo('nombre');

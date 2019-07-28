@@ -56,7 +56,7 @@ class Indicador extends Entidad
   }
 
   public function set($metodo){
-    $this->idIndicador 	  = $metodo('idIndicador ');
+    $this->idIndicador 	  = $metodo('idIndicador');
     $this->idSubproceso   = $metodo('idSubproceso');
     $this->descripcion	  = $metodo('descripcion');
     $this->meta           = $metodo('meta');

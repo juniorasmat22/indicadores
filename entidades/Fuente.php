@@ -41,7 +41,7 @@ class Fuente extends Entidad
   }
 
   public function set($metodo){
-    $this->idFuente 	  = $metodo('idFuente ');
+    $this->idFuente 	  = $metodo('idFuente');
     $this->idIndicador  = $metodo('idIndicador');
     $this->periodo	    = $metodo('periodo');
     $this->resultado         = $metodo('resultado');

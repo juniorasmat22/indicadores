@@ -35,7 +35,7 @@ class Formula extends Entidad
   }
 
   public function set($metodo){
-    $this->idFormula 	  = $metodo('idFormula ');
+    $this->idFormula 	  = $metodo('idFormula');
     $this->idIndicador  = $metodo('idIndicador');
     $this->formula	    = $metodo('formula');
     $this->tipo         = $metodo('tipo');

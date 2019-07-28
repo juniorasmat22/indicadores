@@ -29,7 +29,7 @@ class Subproceso extends Entidad
   }
 
   public function set($metodo){
-    $this->idSubproceso 	   = $metodo('idSubproceso ');
+    $this->idSubproceso 	   = $metodo('idSubproceso');
     $this->idProceso	       = $metodo('idProceso');
     $this->idSubPro	         = $metodo('idSubPro');
     $this->nombre            = $metodo('nombre');

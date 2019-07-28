@@ -29,7 +29,7 @@ class Proceso extends Entidad
   }
 
   public function set($metodo){
-    $this->idProceso 	       = $metodo('idProceso ');
+    $this->idProceso 	       = $metodo('idProceso');
     $this->idMapaProcesos	   = $metodo('idMapaProcesos');
     $this->tipo	             = $metodo('tipo');
     $this->nombre            = $metodo('nombre');

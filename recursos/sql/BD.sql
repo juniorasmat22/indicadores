@@ -18,12 +18,12 @@ USE `enfermeriaUNT` ;
 -- Table `enfermeriaUNT`.`Persona`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Persona` (
-  `idPersona` INT NOT NULL,
+  `idPersona` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NULL,
   `apellido` VARCHAR(50) NULL,
   `dni` VARCHAR(8) NULL,
   PRIMARY KEY (`idPersona`),
-  UNIQUE INDEX `dni_UNIQUE` (`dni` ASC))
+  UNIQUE INDEX `dni_UNIQUE` (`dni` ASC) )
 ENGINE = InnoDB;
 
 
@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`Usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Usuario` (
-  `idUsuario` INT NOT NULL,
+  `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `idPersona` INT NOT NULL,
   `usuario` VARCHAR(45) NULL,
   `pass` VARCHAR(45) NULL,
@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`Empresa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Empresa` (
-  `idEmpresa` INT NOT NULL,
+  `idEmpresa` INT NOT NULL AUTO_INCREMENT,
   `idUsuario` INT NOT NULL,
   `nombre` VARCHAR(100) NULL,
   `ruc` VARCHAR(20) NULL,
@@ -70,7 +70,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`UnidadNegocio`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`UnidadNegocio` (
-  `idUnidadNegocio` INT NOT NULL,
+  `idUnidadNegocio` INT NOT NULL AUTO_INCREMENT,
   `idEmpresa` INT NOT NULL,
   `nombre` VARCHAR(100) NULL,
   `descripcion` MEDIUMTEXT NULL,
@@ -89,7 +89,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`MapaProcesos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`MapaProcesos` (
-  `idMapaProcesos` INT NOT NULL,
+  `idMapaProcesos` INT NOT NULL AUTO_INCREMENT,
   `idEmpresa` INT NOT NULL,
   `idUnidadNegocio` INT NOT NULL,
   `nombre` VARCHAR(100) NULL,
@@ -116,7 +116,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`Proceso`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Proceso` (
-  `idProceso` INT NOT NULL,
+  `idProceso` INT NOT NULL AUTO_INCREMENT,
   `idMapaProcesos` INT NOT NULL,
   `tipo` VARCHAR(40) NULL,
   `nombre` VARCHAR(50) NULL,
@@ -136,22 +136,22 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`SubProceso`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`SubProceso` (
-  `idSubProceso` INT NOT NULL,
+  `idSubProceso` INT NOT NULL AUTO_INCREMENT,
   `idProceso` INT NOT NULL,
   `nombre` VARCHAR(50) NULL,
   `descripcion` TEXT NULL,
   `estado` BIT(1) NULL,
-  `idSubPro` INT NULL,
+  `idSubNivel` INT NULL,
   PRIMARY KEY (`idSubProceso`),
   INDEX `fk_SubProceso_Proceso1_idx` (`idProceso` ASC) ,
-  INDEX `fk_SubProceso_SubProceso1_idx` (`idSubProceso` ASC) ,
+  INDEX `fk_SubProceso_SubProceso1_idx` (`idSubNivel` ASC) ,
   CONSTRAINT `fk_SubProceso_Proceso1`
     FOREIGN KEY (`idProceso`)
     REFERENCES `enfermeriaUNT`.`Proceso` (`idProceso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_SubProceso_SubProceso1`
-    FOREIGN KEY (`idSubPro`)
+    FOREIGN KEY (`idSubNivel`)
     REFERENCES `enfermeriaUNT`.`SubProceso` (`idSubProceso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -162,7 +162,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`Indicador`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Indicador` (
-  `idIndicador` INT NOT NULL,
+  `idIndicador` INT NOT NULL AUTO_INCREMENT,
   `idSubProceso` INT NOT NULL,
   `descripcion` VARCHAR(100) NULL,
   `meta` VARCHAR(200) NULL,
@@ -191,7 +191,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`formula`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`formula` (
-  `idformula` INT NOT NULL,
+  `idformula` INT NOT NULL AUTO_INCREMENT,
   `idIndicador` INT NOT NULL,
   `formula` VARCHAR(200) NULL,
   `tipo` INT(11) NULL,
@@ -213,7 +213,7 @@ ENGINE = InnoDB;
 -- Table `enfermeriaUNT`.`fuente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`fuente` (
-  `idfuente` INT NOT NULL,
+  `idfuente` INT NOT NULL AUTO_INCREMENT,
   `idIndicador` INT NOT NULL,
   `periodo` VARCHAR(45) NULL,
   `param1` FLOAT NULL,

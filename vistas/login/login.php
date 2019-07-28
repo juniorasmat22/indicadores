@@ -38,9 +38,9 @@
       <form class="form-login"  method="post" action="#">
         <h2 class="form-login-heading">Inicio de Sesión</h2>
         <div class="login-wrap">
-          <input type="text" class="form-control" placeholder="Usuario" autofocus>
+          <input type="text" name="usuario" class="form-control" placeholder="Usuario" autofocus>
           <br>
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="pass" class="form-control" placeholder="Password">
           <!--<label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
             <span class="pull-right">

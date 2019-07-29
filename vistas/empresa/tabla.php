@@ -29,7 +29,7 @@
       <?php endif; ?>
 
       <td>
-        <a  class="btn btn-success btn-xs"><i class="fa fa-check"></i></a >
+        <a  class="btn btn-success btn-xs"><i class="fa fa-check"></i>gestionar</a >
         <a <?php echo "href='?c=empresa&a=get&idEmpresa=$fila->idEmpresa&idUsuario=$fila->idUsuario'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
         <a <?php echo "href='?c=empresa&a=eliminar&idEmpresa=$fila->idEmpresa'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
       </td>

@@ -246,15 +246,15 @@
           <p class="centered"><a href="profile.html"><img src="recursos/dashio/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered"><?php echo $_SESSION['usuario']  ?></h5>
           <li class="mt">
-            <a href="index.html">
+            <a class="active" href="#">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
           </li>
           <li class="sub-menu">
-            <a class="active" href="javascript:;">
+            <a  href="javascript:;">
               <i class="fa fa-desktop"></i>
-              <span>UI Elements</span>
+              <span>Empresa</span>
               </a>
             <ul class="sub">
               <li><a href="general.html">General</a></li>

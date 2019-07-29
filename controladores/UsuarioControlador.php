@@ -6,7 +6,7 @@ class UsuarioControlador extends Controlador
 {
 	public function __construct()
 	{
-		parent::__construct('UsuarioModelo','Usuario','vistas/usuarios/index.php');
+		parent::__construct('UsuarioModelo','Usuario','vistas/usuario/index.php');
 	}
 
 	public function login(){

@@ -246,7 +246,7 @@
           <p class="centered"><a href="profile.html"><img src="recursos/dashio/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered"><?php echo $_SESSION['usuario']  ?></h5>
           <li class="mt">
-            <a class="active" href="#">
+            <a class="active" href="?">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
@@ -257,9 +257,9 @@
               <span>Empresa</span>
               </a>
             <ul class="sub">
-              <li><a href="general.html">General</a></li>
+              <li class="active"><a href="?c=empresa">Generalidades</a></li>
               <li><a href="buttons.html">Buttons</a></li>
-              <li class="active"><a href="panels.html">Panels</a></li>
+              <li><a href="panels.html">Panels</a></li>
               <li><a href="font_awesome.html">Font Awesome</a></li>
             </ul>
           </li>
@@ -365,8 +365,9 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> Informacion aquí</h3>
+
        <!--la Informacion de cada pestaña ira aca-->
+        <?php require $vista; ?>
       </section>
       <!-- /wrapper -->
     </section>
@@ -405,7 +406,13 @@
   <script src="recursos/dashio/lib/common-scripts.js"></script>
   <!--script for this page-->
   <script src="recursos/dashio/lib/sparkline-chart.js"></script>
-
+  <script src="recursos/js/ajax.js"></script>
+  <?php
+  $var = isset($_GET['c']) ? $_GET['c'] : '';
+  if($var==''){
+    echo "HOLA";
+  }
+  ?>
 </body>
 
 </html>

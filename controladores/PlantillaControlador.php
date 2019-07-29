@@ -6,9 +6,10 @@ class PlantillaControlador extends Controlador
 
 	public function __construct()
 	{
-
+			parent::__construct('','','vistas/usuario/index.php');
 	}
 	public function index(){
+		$vista = $this->vista;
 		require 'vistas/plantilla/index.php';
 	}
 	public function vista404(){

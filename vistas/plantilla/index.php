@@ -244,7 +244,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="recursos/dashio/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered"><?php echo $_SESSION['usuario']  ?></h5>
+          <h5 class="centered"><?php echo $_SESSION['usuario']; ?></h5>
           <li class="mt">
             <a class="active" href="?">
               <i class="fa fa-dashboard"></i>

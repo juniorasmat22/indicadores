@@ -18,7 +18,7 @@ BEGIN
 
   -- crear
 	if opcion=1 then
-		insert usuarios (idPersona,usuario,pass,estado)
+		insert usuarios (id_persona,usuario,pass,estado)
 		values (idPersona,usuario,pass,estado);
    end if;
 
@@ -28,12 +28,12 @@ BEGIN
       usuario=usuario,
       pass=pass,
       estado = estado
-    where idUsuario = idUsuario;
+    where id_usuario = idUsuario;
   end if;
 
   -- eliminar
 	if opcion=3 then
-		delete from usuario where idUsuario = idUsuario;
+		delete from usuario where id_usuario = idUsuario;
   end if;
 
 	-- listar y buscar
@@ -49,8 +49,8 @@ BEGIN
   -- numero de paginas
     select
        case
-		  when mod(count(idUsuario),registrosPagina)>0 then floor(count(idUsuario) / registrosPagina) +1
-          else floor(count(idUsuario) / registrosPagina)
+		  when mod(count(id_usuario),registrosPagina)>0 then floor(count(id_usuario) / registrosPagina) +1
+          else floor(count(id_usuario) / registrosPagina)
             end as paginas
             from usuario where
             (usuario like concat('%',usuario,'%') or usuario is null ) and
@@ -59,7 +59,7 @@ BEGIN
         end if;
   -- get
 	if opcion=5 then
-		select * from usuario where idUsuario = idUsuario;
+		select * from usuario where id_usuario = idUsuario;
   end if;
   -- Consulta login
   if opcion = 6 then

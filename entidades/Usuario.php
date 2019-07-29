@@ -11,8 +11,8 @@ class Usuario extends Entidad
 
 
 	public function setConsulta($filaConsulta){
-		$this->idUsuario=$this->obtenerColumna($filaConsulta,'idUsuario');
-		$this->idPersona=$this->obtenerColumna($filaConsulta,'idPersona');
+		$this->idUsuario=$this->obtenerColumna($filaConsulta,'id_usuario');
+		$this->idPersona=$this->obtenerColumna($filaConsulta,'id_persona');
 		$this->usuario=$this->obtenerColumna($filaConsulta,'usuario');
 		$this->pass=$this->obtenerColumna($filaConsulta,'pass');
 		$this->estado=$this->obtenerColumna($filaConsulta,'estado');
@@ -38,8 +38,8 @@ class Usuario extends Entidad
 	}
 
 	public function iniciarSesion(){
-    $_SESSION['idUsuario'] = $this->idUsuario;
-    $_SESSION['idPersona'] = $this->idPersona;
+    $_SESSION['id_usuario'] = $this->idUsuario;
+    $_SESSION['id_persona'] = $this->idPersona;
 		$_SESSION['usuario'] = $this->usuario;
 	}
 }

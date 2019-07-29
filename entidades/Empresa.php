@@ -3,17 +3,17 @@ namespace entidades;
 use PDO;
 class Empresa extends Entidad
 {
-  private $idEmpresa;
-  private $idUsuario;
-  private $nombre;
-  private $ruc;
-  private $rubro;
-  private $estado;
+  public $idEmpresa;
+  public $idUsuario;
+  public $nombre;
+  public $ruc;
+  public $rubro;
+  public $estado;
 
 
   public function setConsulta($filaConsulta){
-    $this->idEmpresa=$this->obtenerColumna($filaConsulta,'idEmpresa');
-    $this->idUsuario=$this->obtenerColumna($filaConsulta,'idUsuario');
+    $this->idEmpresa=$this->obtenerColumna($filaConsulta,'id_empresa');
+    $this->idUsuario=$this->obtenerColumna($filaConsulta,'id_usuario');
     $this->nombre=$this->obtenerColumna($filaConsulta,'nombre');
     $this->ruc=$this->obtenerColumna($filaConsulta,'ruc');
     $this->rubro=$this->obtenerColumna($filaConsulta,'rubro');
@@ -33,7 +33,7 @@ class Empresa extends Entidad
 
   public function set($metodo){
     $this->idEmpresa	 = $metodo('idEmpresa');
-    $this->idEmpresa	 = $metodo('idUsuario');
+    $this->idUsuario	 = $metodo('idUsuario');
     $this->nombre      = $metodo('nombre');
     $this->ruc	       = $metodo('ruc');
     $this->rubro	     = $metodo('rubro');

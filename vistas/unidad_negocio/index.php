@@ -1,5 +1,5 @@
 <h3><i class="fa fa-angle-right"></i> Unidades de Negocio</h3>
-<button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nueva Empresa</button>
+<button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nueva Unidad de Negocio</button>
 <div class="row mt">
   <div class="col-md-12">
     <div class="content-panel">
@@ -30,11 +30,10 @@
   </div>
   <script type="text/javascript">
     function funcionOpcionEditar(unidaNegocio){
+      $('#formEditar input[name="idUnidadNegocio"]').val(unidaNegocio.idUnidadNegocio);
       $('#formEditar input[name="idEmpresa"]').val(unidaNegocio.idEmpresa);
-      $('#formEditar input[name="idUsuario"]').val(unidaNegocio.idUsuario);
       $('#formEditar input[name="nombre"]').val(unidaNegocio.nombre);
-      $('#formEditar input[name="ruc"]').val(unidaNegocio.ruc);
-      $('#formEditar input[name="rubro"]').val(unidaNegocio.rubro);
-      $('#formEditar input[name="estado"]').val(unidaNegocio.estado);
+      $('#formEditar textarea[name="descripcion"]').val(unidaNegocio.descripcion);
+      $('#formEditar select[name="estado"]').val(unidaNegocio.estado);
     }
   </script>

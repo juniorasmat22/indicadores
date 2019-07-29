@@ -3,16 +3,16 @@ namespace entidades;
 use PDO;
 class UnidadNegocio extends Entidad
 {
-  private $idUnidadNegocio;
-  private $idEmpresa;
-  private $nombre;
-  private $descripcion;
-  private $estado;
+  public $idUnidadNegocio;
+  public $idEmpresa;
+  public $nombre;
+  public $descripcion;
+  public $estado;
 
 
   public function setConsulta($filaConsulta){
-    $this->idUnidadNegocio=$this->obtenerColumna($filaConsulta,'idUnidadNegocio');
-    $this->idEmpresa=$this->obtenerColumna($filaConsulta,'idEmpresa');
+    $this->idUnidadNegocio=$this->obtenerColumna($filaConsulta,'id_unidad_negocio');
+    $this->idEmpresa=$this->obtenerColumna($filaConsulta,'id_empresa');
     $this->nombre=$this->obtenerColumna($filaConsulta,'nombre');
     $this->descripcion=$this->obtenerColumna($filaConsulta,'descripcion');
     $this->estado=$this->obtenerColumna($filaConsulta,'estado');

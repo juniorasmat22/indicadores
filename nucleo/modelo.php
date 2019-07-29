@@ -177,7 +177,6 @@ class Modelo{
 	}
 	protected function noQuery($sp,$objeto){//llama al sp y devuelve una respuesta cuando no se deveulve ningun dato
 		try{
-
 			Conexion::callStoredProcedure($sp,$objeto);
 			$respuesta=new Respuesta(true,null,null);
 		}catch(Exception $e){

@@ -11,7 +11,6 @@
   </div>
   <!-- /col-md-12 -->
 </div>
-
   <!-- Modal Editar-->
   <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -28,6 +27,9 @@
       </div>
     </div>
   </div>
+  <?php
+      require 'vistas/mapa_proceso/index.php';
+    ?>
   <script type="text/javascript">
     function funcionOpcionEditar(unidaNegocio){
       $('#formEditar input[name="idUnidadNegocio"]').val(unidaNegocio.idUnidadNegocio);

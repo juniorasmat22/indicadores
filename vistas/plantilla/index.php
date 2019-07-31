@@ -19,6 +19,7 @@
   <link href="recursos/dashio/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="recursos/dashio/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="recursos/dashio/lib/bootstrap-datepicker/css/datepicker.css" />
   <link href="recursos/dashio/css/style-responsive.css" rel="stylesheet">
   <script src="recursos/dashio/lib/chart-master/Chart.js"></script>
 
@@ -407,10 +408,18 @@
   <!--script for this page-->
   <script src="recursos/dashio/lib/sparkline-chart.js"></script>
   <script src="recursos/js/ajax.js"></script>
+      <script src="recursos/dashio/lib/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="recursos/dashio/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="recursos/dashio/lib/advanced-form-components.js"></script>
   <?php
   $var = isset($_GET['c']) ? $_GET['c'] : '';
   if($var==''){
     echo "HOLA";
+  }
+  if ($var=='unidadNegocio') {
+    echo "  <script src='recursos/dashio/lib/jquery-ui-1.9.2.custom.min.js'></script>
+    <script type='text/javascript' src='recursos/dashio/lib/bootstrap-datepicker/js/bootstrap-datepicker.js'></script>
+<script src='recursos/dashio/lib/advanced-form-components.js'></script>";
   }
   ?>
 </body>

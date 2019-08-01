@@ -4,15 +4,15 @@ use PDO;
 
 class Proceso extends Entidad
 {
-  private $idProceso;
-  private $idMapaProcesos;
-  private $tipo;
-  private $nombre;
-  private $descripcion;
-  private $estado;
+  public $idProceso;
+  public $idMapaProcesos;
+  public $tipo;
+  public $nombre;
+  public $descripcion;
+  public $estado;
   public function setConsulta($filaConsulta){
-    $this->idProceso=$this->obtenerColumna($filaConsulta,'idProceso');
-    $this->idMapaProcesos=$this->obtenerColumna($filaConsulta,'idMapaProcesos');
+    $this->idProceso=$this->obtenerColumna($filaConsulta,'id_proceso');
+    $this->idMapaProcesos=$this->obtenerColumna($filaConsulta,'id_mapa_procesos');
     $this->tipo=$this->obtenerColumna($filaConsulta,'tipo');
     $this->nombre=$this->obtenerColumna($filaConsulta,'nombre');
     $this->descripcion=$this->obtenerColumna($filaConsulta,'descripcion');

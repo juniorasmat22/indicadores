@@ -38,6 +38,7 @@ $respuesta = $Mapa->modelo->listar();
       <?php endif; ?>
 
       <td>
+          <a  <?php echo "href='?c=mapaProcesos&a=ver_mapa&idMapaProcesos=$fila->idMapaProcesos'"; ?> class="btn btn-success btn-xs"><i class="fa fa-check"></i>Ver Mapa</a >
         <a <?php echo "href='?c=mapaProcesos&a=get&idMapaProcesos=$fila->idMapaProcesos'"; ?> class="btn btn-primary btn-xs editar2"><i class="fa fa-pencil"></i></a>
         <a <?php echo "href='?c=mapaProcesos&a=eliminar&idMapaProcesos=$fila->idMapaProcesos'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
       </td>

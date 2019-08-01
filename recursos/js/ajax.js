@@ -43,6 +43,25 @@ $(document).ready( function () {
       }
     });
   });
+  //opcion editar 2
+  $(document).on('click','.editar2',function(e){
+    e.preventDefault();
+    enviarLink($(this).attr('href'),function(data){
+      try{
+        respuesta=JSON.parse(data);
+        if(respuesta.respuesta){
+          $("#editarModal2").modal('show');
+          funcionOpcionEditar2(respuesta.resultado);
+        }else{
+          alert(respuesta.mensaje);
+        }
+
+      }catch(e){
+        mostrarErrorPhp(data);
+        alert(e);
+      }
+    });
+  });
   //opcion eliminar
   $(document).on('click','.eliminar',function(e){
     e.preventDefault();

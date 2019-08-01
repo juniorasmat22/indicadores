@@ -54,7 +54,7 @@ BEGIN
 		  when mod(count(idEmpresa),registrosPagina)>0 then floor(count(idEmpresa) / registrosPagina) +1
           else floor(count(idEmpresa) / registrosPagina)
             end as paginas
-            from usuario where
+            from empresa where
             (nombre like concat('%',nombre,'%') or nombre is null ) and
             (rubro like concat('%',rubro,'%') or rubro is null) ;
 

@@ -13,7 +13,7 @@
 </div>
 
   <!-- Modal Editar-->
-  <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editarModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <?php require 'editar.php';?>
@@ -29,10 +29,10 @@
     </div>
   </div>
   <script type="text/javascript">
-    function funcionOpcionEditar(mapaProceso){
+    function funcionOpcionEditar2(mapaProceso){
       $('#formEditar input[name="idMapaProcesos"]').val(mapaProceso.idMapaProcesos);
       $('#formEditar input[name="idEmpresa"]').val(mapaProceso.idEmpresa);
-      $('#formEditar input[name="idUnidadNegocio"]').val(mapaProceso.idUnidadNegocio);
+      $('#formEditar select[name="idUnidadNegocio"]').val(mapaProceso.idUnidadNegocio);
       $('#formEditar input[name="nombre"]').val(mapaProceso.nombre);
       $('#formEditar textarea[name="descripcion"]').val(mapaProceso.descripcion);
       $('#formEditar input[name="fecha"]').val(mapaProceso.fecha);

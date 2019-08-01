@@ -35,6 +35,6 @@
       $('#formEditar input[name="nombre"]').val(empresa.nombre);
       $('#formEditar input[name="ruc"]').val(empresa.ruc);
       $('#formEditar input[name="rubro"]').val(empresa.rubro);
-      $('#formEditar input[name="estado"]').val(empresa.estado);
+      $('#formEditar select[name="estado"]').val(empresa.estado);
     }
   </script>

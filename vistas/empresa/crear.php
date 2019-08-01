@@ -29,7 +29,7 @@
             <div class="form-group ">
               <label for="estado" class="control-label col-lg-2">Estado</label>
               <div class="col-lg-10">
-                <select id="estado" class="form-control" required>
+                <select id="estado" name="estado" class="form-control" required>
                     <option value="1">activo</option>
                     <option value="0">inactivo</option>
                   </select>

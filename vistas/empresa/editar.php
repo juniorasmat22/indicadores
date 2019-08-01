@@ -30,14 +30,14 @@
             <div class="form-group ">
               <label for="estado" class="control-label col-lg-2">Estado</label>
               <div class="col-lg-10">
-                <select id="estado" class="form-control" required>
-                    <option>activo</option>
-                    <option>inactivo</option>
+                <select  id="estado" name="estado" class="form-control" required>
+                    <option value="1">activo</option>
+                    <option value="0">inactivo</option>
                   </select>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </div>
           </form>

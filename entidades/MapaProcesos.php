@@ -2,17 +2,17 @@
 namespace entidades;
 use PDO;
 class MapaProcesos extends Entidad{
-  private $idMapaProcesos;
-  private $idEmpresa;
-  private $idUnidadNegocio;
-  private $nombre;
-  private $descripcion;
-  private $fecha;
-  private $estado;
+  public $idMapaProcesos;
+  public $idEmpresa;
+  public $idUnidadNegocio;
+  public $nombre;
+  public $descripcion;
+  public $fecha;
+  public $estado;
   public function setConsulta($filaConsulta){
-    $this->idMapaProcesos=$this->obtenerColumna($filaConsulta,'idMapaProcesos');
-    $this->idEmpresa=$this->obtenerColumna($filaConsulta,'idEmpresa');
-    $this->idUnidadNegocio=$this->obtenerColumna($filaConsulta,'idUnidadNegocio');
+    $this->idMapaProcesos=$this->obtenerColumna($filaConsulta,'id_mapa_procesos');
+    $this->idEmpresa=$this->obtenerColumna($filaConsulta,'id_empresa');
+    $this->idUnidadNegocio=$this->obtenerColumna($filaConsulta,'id_unidad_negocio');
     $this->nombre=$this->obtenerColumna($filaConsulta,'nombre');
     $this->descripcion=$this->obtenerColumna($filaConsulta,'descripcion');
     $this->fecha=$this->obtenerColumna($filaConsulta,'fecha');

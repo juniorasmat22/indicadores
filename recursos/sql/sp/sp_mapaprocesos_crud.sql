@@ -1,13 +1,15 @@
 use enfermeriaunt;
 DELIMITER $$
 
-DROP procedure if exists sp_unidadnegocio_crud $$
+DROP procedure if exists sp_mapaprocesos_crud $$
 
-CREATE PROCEDURE sp_unidadnegocio_crud(
-  idUnidadNegocio int,
+CREATE PROCEDURE sp_mapaprocesos_crud(
+  idMapaProcesos int,
   idEmpresa int,
+  idUnidadNegocio int,
   nombre varchar(100),
-  descripcion varchar(300),
+  descripcion varchar(200),
+  fecha date,
   estado int,
   opcion int,
   pagina int
@@ -18,22 +20,25 @@ BEGIN
 
   -- crear
 	if opcion=1 then
-		insert unidadnegocio (id_empresa,nombre,descripcion,estado)
-		values (idEmpresa,nombre,descripcion,estado);
+		insert mapaprocesos (id_empresa,id_unidad_negocio,nombre,descripcion,fecha,estado)
+		values (idEmpresa,idUnidadNegocio,nombre,descripcion,fecha,estado);
    end if;
 
   -- editar
   if opcion=2 then
-    update unidadnegocio set
+    update mapaprocesos set
+      id_empresa=idEmpresa,
+      id_unidad_negocio=idUnidadNegocio,
       nombre=nombre,
       descripcion=descripcion,
+      fecha=fecha,
       estado = estado
-    where id_unidad_negocio = idUnidadNegocio;
+    where id_mapa_procesos = idMapaProcesos;
   end if;
 
   -- eliminar
 	if opcion=3 then
-		delete from unidadnegocio where id_unidad_negocio = idUnidadNegocio;
+		delete from mapaprocesos where id_mapa_procesos = idMapaProcesos;
   end if;
 
 	-- listar y buscar
@@ -41,7 +46,7 @@ BEGIN
 		set registrosPagina=10;
 		set limiteInferior=(pagina-1)*registrosPagina;
 
-		select * from unidadnegocio where
+		select * from mapaprocesos where
       (nombre like concat('%',nombre,'%') or nombre is null ) and
       (idEmpresa like concat('%',idEmpresa,'%') or idEmpresa is null)
     limit limiteInferior,registrosPagina;
@@ -49,17 +54,17 @@ BEGIN
   -- numero de paginas
     select
        case
-		  when mod(count(idUnidadNegocio),registrosPagina)>0 then floor(count(idUnidadNegocio) / registrosPagina) +1
-          else floor(count(idUnidadNegocio) / registrosPagina)
+		  when mod(count(idMapaProcesos),registrosPagina)>0 then floor(count(idMapaProcesos) / registrosPagina) +1
+          else floor(count(idMapaProcesos) / registrosPagina)
             end as paginas
-            from unidadnegocio where
+            from usuario where
             (nombre like concat('%',nombre,'%') or nombre is null )and
             (idEmpresa like concat('%',idEmpresa,'%') or idEmpresa is null);
 
         end if;
   -- get
 	if opcion=5 then
-		select * from unidadnegocio where id_unidad_negocio=idUnidadNegocio and id_empresa = idEmpresa;
+		select * from mapaprocesos where id_mapa_procesos=idMapaProcesos;
   end if;
 
 END $$

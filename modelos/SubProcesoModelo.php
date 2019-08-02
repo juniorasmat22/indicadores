@@ -9,4 +9,12 @@ class SubProcesoModelo extends Modelo{
 		$SubProceso->opcion = 6;
 		return $this->queryObjects($this->sp,$SubProceso);
 	}
+	public function listar_subprocesos2($SubProceso){
+		$SubProceso->opcion = 7;
+		return $this->queryObjects($this->sp,$SubProceso);
+	}
+	public function listar_subprocesosNivel2($SubProceso){
+		$SubProceso->opcion = 8;
+		return $this->queryObjects($this->sp,$SubProceso);
+	}
 }

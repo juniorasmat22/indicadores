@@ -52,11 +52,10 @@
 
   <div class="col-md-3">
     <h5><i class="fa fa-angle-right"></i> Opciones</h5>
-    <a type="button"  href="?c=proceso&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>" class="btn btn-theme"><i class="fa fa-check"></i> Nuevo Proceso</a>
+    <a type="button"  href="?c=proceso&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>" class="btn btn-theme"><i class="fa fa-check"></i> Gestionar Procesos</a>
       <br><br>
-    <a type="button" class="btn btn-theme"><i class="fa fa-check"></i> Nuevo SubProceso</a>
-      <br><br>
-    <a type="button" class="btn btn-theme"><i class="fa fa-check"></i> Imprimir</a>
+
+    <a type="button" class="btn btn-theme04"><i class="fa fa-file-pdf-o"></i> Imprimir</a>
   </div>
 </div>
 <section>

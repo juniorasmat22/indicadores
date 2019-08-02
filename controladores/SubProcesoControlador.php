@@ -13,7 +13,7 @@ class SubProcesoControlador extends Controlador
     $this->entidad->idProceso=isset($_GET['idProceso'])?$_GET['idProceso']:null;
     $this->entidad->estado=1;
     $pagina=isset($_GET['p'])?$_GET['p']:1;
-    $respuesta=$this->modelo->listar_subprocesos($this->entidad);
+    $respuesta=$this->modelo->listar_subprocesos2($this->entidad);
     $vista=$this->vista;
     require_once 'vistas/plantilla/index.php';
   }

@@ -66,8 +66,15 @@ BEGIN
   end if;
   -- listar Subprocesos activos por procesos
 	if opcion=6 then
-		select * from subproceso  where  id_proceso=idProceso and estado=estado;
+		select * from subproceso s where s.id_proceso=idProceso and s.estado=estado;
   end if;
-
+  -- listar Subprocesos activos por procesos
+  if opcion=7 then
+    select * from subproceso s where s.id_proceso=idProceso and  s.id_sub_nivel is null;
+  end if;
+  -- listar Subprocesos activos por subniveles
+  if opcion=8 then
+    select * from subproceso s where s.id_sub_nivel=idSubPro ;
+  end if;
 END $$
 DELIMITER ;

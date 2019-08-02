@@ -10,7 +10,7 @@ $subProcesoControlador->entidad->estado=1
               <?php if (count($filas)>0):  ?>
               <div class="row">
                 <?php foreach ($filas as $fila): ?>
-                    <div class="col-md-3 col-sm-3 mb">
+                    <div class="col-md-4 col-sm-4 mb">
                       <div class="grey-panel">
                         <div class="grey-header">
                           <h5><?php echo $fila->nombre; ?></h5>

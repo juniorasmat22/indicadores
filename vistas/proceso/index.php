@@ -1,6 +1,6 @@
 <h3><i class="fa fa-angle-right"></i> Procesos</h3>
 <button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nuevo Proceso</button>
-<a href="?c=mapaProcesos&a=ver_mapa&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>" type="button" class="btn btn-theme" ><i class="fa fa-check"></i> Ver Mapa</a>
+<a href="?c=mapaProcesos&a=ver_mapa&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>" type="button" class="btn btn-theme" ><i class="fa fa-eye"></i> Ver Mapa</a>
 
 <div class="row mt">
   <div class="col-md-12">

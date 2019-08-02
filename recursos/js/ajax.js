@@ -62,6 +62,26 @@ $(document).ready( function () {
       }
     });
   });
+
+  //opcion editar 3
+  $(document).on('click','.editar3',function(e){
+    e.preventDefault();
+    enviarLink($(this).attr('href'),function(data){
+      try{
+        respuesta=JSON.parse(data);
+        if(respuesta.respuesta){
+          $("#crearModalSubnivel").modal('show');
+          funcionPasarProceso(respuesta.resultado);
+        }else{
+          alert(respuesta.mensaje);
+        }
+
+      }catch(e){
+        mostrarErrorPhp(data);
+        alert(e);
+      }
+    });
+  });
   //opcion eliminar
   $(document).on('click','.eliminar',function(e){
     e.preventDefault();

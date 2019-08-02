@@ -34,7 +34,7 @@
     function funcionOpcionEditar(proceso){
       $('#formEditar input[name="idProceso"]').val(proceso.idProceso);
       $('#formEditar input[name="idMapaProcesos"]').val(proceso.idMapaProcesos);
-      $('#formEditar input[name="tipo"]').val(proceso.tipo);
+      $('#formEditar select[name="tipo"]').val(proceso.tipo);
       $('#formEditar input[name="nombre"]').val(proceso.nombre);
       $('#formEditar textarea[name="descripcion"]').val(proceso.descripcion);
       $('#formEditar select[name="estado"]').val(proceso.estado);

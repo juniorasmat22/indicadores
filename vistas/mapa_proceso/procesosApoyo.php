@@ -20,7 +20,7 @@ $subProcesoControlador->entidad->estado=1
                             <section class="task-panel tasks-widget">
                               <div class="panel-heading">
                                 <div class="pull-left">
-                                  <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 1</span></h5>
+                                  <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 2</span></h5>
                                 </div>
                                 <br>
                               </div>

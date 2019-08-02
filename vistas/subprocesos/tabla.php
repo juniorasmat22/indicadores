@@ -30,8 +30,7 @@ $subProcesoControlador = new SubProcesoControlador();
         <td><?php echo $fila->descripcion; ?></td>
         <td>
           <table class="table table-striped table-advance table-hover">
-            <h4><i class="fa fa-angle-right"></i> Listado de Sub Procesos-Nivel 2</h4>
-            <hr>
+            
             <thead>
               <tr>
                 <th><i class="fa fa-bullhorn"></i> Nombre</th>

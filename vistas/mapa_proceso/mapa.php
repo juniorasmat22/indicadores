@@ -80,7 +80,7 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
           <div class="custom-box">
             <div class="row mt">
-              <div class="col-xs-12 col-sm-12 col-md-12" style="border-style: solid; border-color: red;" >
+              <div class="col-xs-12 col-sm-12 col-md-12"  >
                 <h4><i class="fa fa-angle-right white"></i>PROCESOS ESTRÁTEGICOS</h4>
                 <?php
                     require 'procesosEstratégicos.php';
@@ -89,7 +89,7 @@
               <br>
               <label for=""></label>
               <br>
-              <div class="col-xs-12 col-sm-12 col-md-12" style="border-style: solid; border-color: red;" >
+              <div class="col-xs-12 col-sm-12 col-md-12"  >
                 <h4><i class="fa fa-angle-right"></i>PROCESOS MISIONALES</h4>
                 <?php
                     require 'procesosMisionales.php';
@@ -98,7 +98,7 @@
               <br>
               <label for=""></label>
               <br>
-              <div class="col-xs-12 col-sm-12 col-md-12" style="border-style: solid; border-color: red;">
+              <div class="col-xs-12 col-sm-12 col-md-12" >
                 <h4><i class="fa fa-angle-right"></i>PROCESOS DE APOYO</h4>
                 <?php
                     require 'procesosApoyo.php';

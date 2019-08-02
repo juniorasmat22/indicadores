@@ -1,3 +1,8 @@
+<?php
+namespace controladores;
+$subProcesoControlador = new SubProcesoControlador();
+$subProcesoControlador->entidad->estado=1
+ ?>
 <div class="row mt">
           <div class="col-lg-12">
             <?php if ($apoyo->respuesta) {$filas=$apoyo->resultado;?>
@@ -6,17 +11,52 @@
                 <?php foreach ($filas as $fila): ?>
 
                     <div class="col-md-3 col-sm-3 mb">
-                      <div class="grey-panel pn donut-chart">
+                      <div class="grey-panel">
                         <div class="grey-header">
                           <h5><?php echo $fila->nombre; ?></h5>
                         </div>
-                        <p><?php echo $fila->descripcion; ?></p>
+                        <div class="row mt">
+                          <div class="col-md-12">
+                            <section class="task-panel tasks-widget">
+                              <div class="panel-heading">
+                                <div class="pull-left">
+                                  <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 1</span></h5>
+                                </div>
+                                <br>
+                              </div>
+                              <div class="panel-body">
+                                <div class="task-content">
+                                  <ul class="task-list">
+                                    <?php
+                                      $subProcesoControlador->entidad->idProceso=$fila->idProceso;
+                                      $subPorcesos = $subProcesoControlador->modelo->listar_subprocesos($subProcesoControlador->entidad);
+                                      if ($subPorcesos->respuesta) {
+                                        $c=0;
+                                        $filas2=$subPorcesos->resultado;
+                                        foreach ($filas2 as $fila) :$c=$c+1;?>
+                                        <li>
+                                          <div class="task-title">
+                                            <span class="task-title-sp"><?php echo $fila->nombre; ?></span>
+
+                                            <div class="pull-right hidden-phone">
+                                              <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                              <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <?php endforeach;
+                                      }
+                                     ?>
+                                  </ul>
+                                </div>
+                              </div>
+                            </section>
+                          </div>
+                          <!-- /col-md-12-->
+                        </div>
                         <div class="row">
                           <div class="col-sm-6 col-xs-6 goleft">
-                            <p>Codigo:</p>
-                          </div>
-                          <div class="col-sm-6 col-xs-6">
-                            <h2><?php echo $fila->idProceso; ?></h2>
+                            <p>Código:<?php echo $fila->idProceso; ?></p>
                           </div>
                         </div>
                       </div>

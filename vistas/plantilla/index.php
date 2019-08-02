@@ -22,7 +22,7 @@
   <link rel="stylesheet" type="text/css" href="recursos/dashio/lib/bootstrap-datepicker/css/datepicker.css" />
   <link href="recursos/dashio/css/style-responsive.css" rel="stylesheet">
   <script src="recursos/dashio/lib/chart-master/Chart.js"></script>
-
+  <link rel="stylesheet" href="recursos/dashio/css/to-do.css">
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/

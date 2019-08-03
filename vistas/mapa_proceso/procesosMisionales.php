@@ -1,7 +1,8 @@
 <?php
 namespace controladores;
 $subProcesoControlador = new SubProcesoControlador();
-$subProcesoControlador->entidad->estado=1
+$subProcesoControlador->entidad->estado=1;
+$verifica_subprocesos=false;
  ?>
 <div class="row mt">
           <div class="col-lg-12">
@@ -53,10 +54,12 @@ $subProcesoControlador->entidad->estado=1
                                                     <div class="task-content">
                                                       <ul class="task-list">
                                                   <?php
+
                                                     $subProcesoControlador->entidad->idSubPro=$fila->idSubproceso;
                                                     $subPorcesosSubnivel = $subProcesoControlador->modelo->listar_subprocesosNivel($subProcesoControlador->entidad);
                                                     //var_dump($subPorcesosSubnivel);
                                                     if ($subPorcesosSubnivel->respuesta) {
+                                                      $verifica_subprocesos=true;
                                                       $filas3=$subPorcesosSubnivel->resultado;
                                                     foreach ($filas3 as $fila3): ?>
                                                     <li>
@@ -74,6 +77,7 @@ $subProcesoControlador->entidad->estado=1
                                                         </div>
                                                       </div>
                                                       <div class="pull-right hidden-phone">
+                                                        <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                       </div>
@@ -81,6 +85,7 @@ $subProcesoControlador->entidad->estado=1
                                                   </li>
                                                       <?php endforeach;
                                                     }else {
+                                                      $verifica_subprocesos=false;
                                                     echo "<div class='alert alert-danger'>Aun no tiene subprocesos de nivel 3 para este subproceso</div>";
                                                     }
                                                    ?>
@@ -94,12 +99,14 @@ $subProcesoControlador->entidad->estado=1
                                               </div>
                                             </div>
                                             <div class="pull-right hidden-phone">
+                                              <?php echo $retVal = (!$verifica_subprocesos) ? "<a href='?c=indicador&a=listarIndicadores&idSubproceso=$fila->idSubproceso&idMapaProcesos=$_GET[idMapaProcesos]' class='btn btn-success btn-xs'><i class='fa fa-check'></i></a >" :  ""  ;?>
+
                                               <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                               <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                             </div>
                                           </div>
                                         </li>
-                                        <?php endforeach;
+                                        <?php $verifica_subprocesos=false; endforeach;
                                       }else{
                                         echo "<div class='alert alert-danger'>Aun no tiene subprocesos de nivel 2 para este subproceso</div>";
                                       }

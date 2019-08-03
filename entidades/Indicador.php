@@ -4,29 +4,29 @@ use PDO;
 
 class Indicador extends Entidad
 {
-  private $idIndicador;
-  private $idSubproceso;
-  private $descripcion;
-  private $meta;//objetivo
-  private $iniciativas;
-  private $responsable;
-  private $lineaBase;
-  private $frecuencia;
-  private $estado;
-  private $tipo;
-  private $unidad;
-  private $fv;
-  private $rojo;
-  private $amarillo;
-  private $verde;
+  public $idIndicador;
+  public $idSubproceso;
+  public $descripcion;
+  public $meta;//objetivo
+  public $iniciativas;
+  public $responsable;
+  public $lineaBase;
+  public $frecuencia;
+  public $estado;
+  public $tipo;
+  public $unidad;
+  public $fv;
+  public $rojo;
+  public $amarillo;
+  public $verde;
   public function setConsulta($filaConsulta){
-    $this->idIndicador=$this->obtenerColumna($filaConsulta,'idIndicador');
-    $this->idSubproceso=$this->obtenerColumna($filaConsulta,'idSubproceso');
+    $this->idIndicador=$this->obtenerColumna($filaConsulta,'id_indicador');
+    $this->idSubproceso=$this->obtenerColumna($filaConsulta,'id_sub_proceso');
     $this->descripcion=$this->obtenerColumna($filaConsulta,'descripcion');
     $this->meta=$this->obtenerColumna($filaConsulta,'meta');
     $this->iniciativas=$this->obtenerColumna($filaConsulta,'iniciativas');
     $this->responsable=$this->obtenerColumna($filaConsulta,'responsable');
-    $this->lineaBase=$this->obtenerColumna($filaConsulta,'lineaBase');
+    $this->lineaBase=$this->obtenerColumna($filaConsulta,'linea_base');
     $this->frecuencia=$this->obtenerColumna($filaConsulta,'frecuencia');
     $this->estado=$this->obtenerColumna($filaConsulta,'estado');
     $this->tipo=$this->obtenerColumna($filaConsulta,'tipo');

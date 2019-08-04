@@ -331,6 +331,9 @@
     <script type='text/javascript' src='recursos/dashio/lib/bootstrap-datepicker/js/bootstrap-datepicker.js'></script>
 <script src='recursos/dashio/lib/advanced-form-components.js'></script>";
   }
+  if ($var=="formula") {
+    echo "<script src='recursos/js/formula.js'></script>";
+  }
   ?>
 </body>
 

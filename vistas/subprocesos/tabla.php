@@ -30,7 +30,7 @@ $subProcesoControlador = new SubProcesoControlador();
         <td><?php echo $fila->descripcion; ?></td>
         <td>
           <table class="table table-striped table-advance table-hover">
-            
+
             <thead>
               <tr>
                 <th><i class="fa fa-bullhorn"></i> Nombre</th>

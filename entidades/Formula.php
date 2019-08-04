@@ -4,17 +4,17 @@ use PDO;
 
 class Formula extends Entidad
 {
-  private $idFormula;
-  private $idIndicador;
-  private $formula;
-  private $tipo;
-  private $param1;
-  private $param2;
-  private $param3;
-  private $estado;
+  public $idFormula;
+  public $idIndicador;
+  public $formula;
+  public $tipo;
+  public $param1;
+  public $param2;
+  public $param3;
+  public $estado;
   public function setConsulta($filaConsulta){
-    $this->idFormula=$this->obtenerColumna($filaConsulta,'idFormula');
-    $this->idIndicador=$this->obtenerColumna($filaConsulta,'idIndicador');
+    $this->idFormula=$this->obtenerColumna($filaConsulta,'id_formula');
+    $this->idIndicador=$this->obtenerColumna($filaConsulta,'id_indicador');
     $this->formula=$this->obtenerColumna($filaConsulta,'formula');
     $this->tipo=$this->obtenerColumna($filaConsulta,'tipo');
     $this->param1=$this->obtenerColumna($filaConsulta,'param1');
@@ -27,9 +27,9 @@ class Formula extends Entidad
     $statement->bindValue(2,$this->idIndicador,PDO::PARAM_INT);
     $statement->bindValue(3,$this->formula,PDO::PARAM_STR);
     $statement->bindValue(4,$this->tipo,PDO::PARAM_INT);
-    $statement->bindValue(5,$this->param1,PDO::PARAM_INT);
-    $statement->bindValue(6,$this->param2,PDO::PARAM_INT);
-    $statement->bindValue(7,$this->param3,PDO::PARAM_INT);
+    $statement->bindValue(5,$this->param1,PDO::PARAM_STR);
+    $statement->bindValue(6,$this->param2,PDO::PARAM_STR);
+    $statement->bindValue(7,$this->param3,PDO::PARAM_STR);
     $statement->bindValue(8,$this->estado,PDO::PARAM_INT);
     $statement->bindValue(9,$this->opcion,PDO::PARAM_INT);
 		$statement->bindValue(10,$this->pagina,PDO::PARAM_INT);

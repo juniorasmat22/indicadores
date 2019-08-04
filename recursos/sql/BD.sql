@@ -137,16 +137,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`SubProceso` (
   `id_sub_proceso` INT NOT NULL AUTO_INCREMENT,
-  `idProceso` INT NOT NULL,
+  `id_proceso` INT NOT NULL,
   `nombre` VARCHAR(50) NULL,
   `descripcion` TEXT NULL,
   `estado` BIT(1) NULL,
   `id_sub_nivel` INT NULL,
   PRIMARY KEY (`id_sub_proceso`),
-  INDEX `fk_SubProceso_Proceso1_idx` (`idProceso` ASC) ,
+  INDEX `fk_SubProceso_Proceso1_idx` (`id_proceso` ASC) ,
   INDEX `fk_SubProceso_SubProceso1_idx` (`id_sub_nivel` ASC) ,
   CONSTRAINT `fk_SubProceso_Proceso1`
-    FOREIGN KEY (`idProceso`)
+    FOREIGN KEY (`id_proceso`)
     REFERENCES `enfermeriaUNT`.`Proceso` (`id_proceso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`Indicador` (
   `meta` VARCHAR(200) NULL,
   `iniciativas` VARCHAR(300) NULL,
   `responsable` VARCHAR(45) NULL,
-  `lineaBase` VARCHAR(50) NULL,
+  `linea_base` VARCHAR(50) NULL,
   `frecuencia` VARCHAR(100) NULL,
   `estado` BIT(1) NULL,
   `tipo` VARCHAR(3) NULL,
@@ -193,11 +193,11 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `enfermeriaUNT`.`formula` (
   `id_formula` INT NOT NULL AUTO_INCREMENT,
   `id_indicador` INT NOT NULL,
-  `formula` VARCHAR(200) NULL,
+  `formula` MEDIUMTEXT NULL,
   `tipo` INT(11) NULL,
-  `param1` INT(11) NULL,
-  `param2` INT(11) NULL,
-  `param3` INT(11) NULL,
+  `param1` MEDIUMTEXT NULL,
+  `param2` MEDIUMTEXT NULL,
+  `param3` MEDIUMTEXT NULL,
   `estado` BIT(1) NULL,
   PRIMARY KEY (`id_formula`),
   INDEX `fk_formula_Indicador1_idx` (`id_indicador` ASC) ,

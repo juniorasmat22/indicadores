@@ -5,9 +5,7 @@
     <tr>
 
       <th class="hidden-phone"><i class="fa fa-question-circle"></i>Descripción</th>
-      <th><i class="fa fa-bullhorn"></i> Meta</th>
-      <th><i class="fa fa-bullhorn"></i> Responsable</th>
-      <th><i class="fa fa-bullhorn"></i> Frecuencia</th>
+      <th><i class="fa fa-bullhorn"></i> Objetivo</th>
       <th><i class=" fa fa-edit"></i> Estado</th>
       <th><i class=" fa fa-edit"></i> Opciones</th>
     </tr>
@@ -22,9 +20,8 @@
       <td>
         <a href="#"><?php echo $fila->descripcion; ?></a>
       </td>
+
       <td class="hidden-phone"><?php echo $fila->meta; ?></td>
-      <td class="hidden-phone"><?php echo $fila->responsable; ?></td>
-      <td class="hidden-phone"><?php echo $fila->frecuencia; ?></td>
       <?php if ($fila->estado==1): ?>
         <td><span class="label label-success label-mini">activo</span></td>
       <?php else: ?>
@@ -32,8 +29,13 @@
       <?php endif; ?>
 
       <td>
-        <a <?php echo ""; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
-        <a <?php echo ""; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
+        <?php if ($fila->estado==1): ?>
+          <a  <?php echo "href='?c=formula&a=listarFormula&idIndicador=$fila->idIndicador&idSubproceso=$_GET[idSubproceso]&idMapaProcesos=$_GET[idMapaProcesos]'"?> class="btn btn-success btn-xs"><i class="fa fa-check"></i>fórmula</a >
+          <a  <?php echo ""?> class="btn btn-primary btn-xs"><i class="fa fa-check"></i>datos</a >
+        <?php endif; ?>
+
+        <a <?php echo "href='?c=indicador&a=get&idIndicador=$fila->idIndicador'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+        <a <?php echo "href='?c=indicador&a=eliminar&idIndicador=$fila->idIndicador'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
       </td>
     </tr>
     <?php

@@ -34,15 +34,15 @@
     function funcionOpcionEditar(indicador){
       $('#formEditar input[name="idIndicador"]').val(indicador.idIndicador);
       $('#formEditar input[name="idSubproceso"]').val(indicador.idSubproceso);
-      $('#formEditar input[name="descripcion"]').val(indicador.descripcion);
+      $('#formEditar textarea[name="descripcion"]').val(indicador.descripcion);
       $('#formEditar input[name="meta"]').val(indicador.meta);
-      $('#formEditar input[name="iniciativas"]').val(indicador.iniciativas);
+      $('#formEditar textarea[name="iniciativas"]').val(indicador.iniciativas);
       $('#formEditar input[name="responsable"]').val(indicador.responsable);
       $('#formEditar input[name="lineaBase"]').val(indicador.lineaBase);
       $('#formEditar input[name="frecuencia"]').val(indicador.frecuencia);
       $('#formEditar input[name="tipo"]').val(indicador.tipo);
       $('#formEditar input[name="unidad"]').val(indicador.unidad);
-      $('#formEditar input[name="fv"]').val(indicador.fv);
+      $('#formEditar textarea[name="fv"]').val(indicador.fv);
       $('#formEditar input[name="rojo"]').val(indicador.rojo);
       $('#formEditar input[name="amarillo"]').val(indicador.amarillo);
       $('#formEditar input[name="verde"]').val(indicador.verde);

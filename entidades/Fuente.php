@@ -4,19 +4,20 @@ use PDO;
 
 class Fuente extends Entidad
 {
-  private $idFuente;
-  private $idIndicador;
-  private $periodo;
-  private $param1;
-  private $param2;
-  private $param3;
-  private $resultado;
-  private $inicio;
-  private $fin;
-  private $estado;
+  public $idFuente;
+  public $idIndicador;
+  public $periodo;
+  public $tipo;
+  public $param1;
+  public $param2;
+  public $param3;
+  public $resultado;
+  public $inicio;
+  public $fin;
+  public $estado;
   public function setConsulta($filaConsulta){
-    $this->idFuente=$this->obtenerColumna($filaConsulta,'idFuente');
-    $this->idIndicador=$this->obtenerColumna($filaConsulta,'idIndicador');
+    $this->idFuente=$this->obtenerColumna($filaConsulta,'id_fuente');
+    $this->idIndicador=$this->obtenerColumna($filaConsulta,'id_indicador');
     $this->periodo=$this->obtenerColumna($filaConsulta,'periodo');
     $this->param1=$this->obtenerColumna($filaConsulta,'param1');
     $this->param2=$this->obtenerColumna($filaConsulta,'param2');
@@ -39,6 +40,7 @@ class Fuente extends Entidad
     $statement->bindValue(10,$this->estado,PDO::PARAM_INT);
     $statement->bindValue(11,$this->opcion,PDO::PARAM_INT);
 		$statement->bindValue(12,$this->pagina,PDO::PARAM_INT);
+    $statement->bindValue(13,$this->tipo,PDO::PARAM_INT);
     return $statement;
   }
 
@@ -51,8 +53,9 @@ class Fuente extends Entidad
     $this->param2	      = $metodo('param2');
     $this->param3	      = $metodo('param3');
     $this->inicio 	    = $metodo('inicio');
-    $this->fin 	    = $metodo('fin');
+    $this->fin 	        = $metodo('fin');
     $this->estado 	    = $metodo('estado');
+    $this->tipo 	       = $metodo('tipo');
   }
 
 }

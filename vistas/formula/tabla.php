@@ -32,7 +32,7 @@
       <?php endif; ?>
 
       <td>
-        
+
         <a <?php echo "href='?c=formula&a=get&idFormula=$fila->idFormula'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
         <a <?php echo "href='?c=formula&a=eliminar&idFormula=$fila->idFormula'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
       </td>

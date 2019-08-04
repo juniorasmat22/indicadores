@@ -11,7 +11,7 @@ class MapaProcesosControlador extends Controlador
 		parent::__construct('MapaProcesosModelo','MapaProcesos','vistas/mapa_proceso/index.php');
 	}
   public function ver_mapa(){
-    $this->Proceso_Controlador->entidad->idMapaProcesos=$_GET['idMapaProcesos'];;
+    $this->Proceso_Controlador->entidad->idMapaProcesos=$_GET['idMapaProcesos'];
     $this->Proceso_Controlador->entidad->tipo="Estrátegico";
     $this->Proceso_Controlador->entidad->estado=1;
     $estrategicos=$this->Proceso_Controlador->modelo->listar_procesos($this->Proceso_Controlador->entidad);

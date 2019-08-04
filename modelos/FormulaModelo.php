@@ -9,4 +9,8 @@ class FormulaModelo extends Modelo{
 		$indicador->opcion = 6;
 		return $this->queryObjects($this->sp,$indicador);
 	}
+	public function listar_formula_X($indicador){//para la tabla- listar formulas
+		$indicador->opcion = 6;
+		return $this->queryObjeto($this->sp,$indicador);
+	}
 }

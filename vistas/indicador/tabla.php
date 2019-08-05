@@ -28,13 +28,15 @@
         <td><span class="label label-danger label-mini">inactivo</span></td>
       <?php endif; ?>
 
-      <td>
+      <td class="centered">
         <?php if ($fila->estado==1): ?>
-          <a  <?php echo "href='?c=formula&a=listarFormula&idIndicador=$fila->idIndicador&idSubproceso=$_GET[idSubproceso]&idMapaProcesos=$_GET[idMapaProcesos]'"?> class="btn btn-success btn-xs"><i class="fa fa-check"></i>fórmula</a >
-          <a  <?php echo "href='?c=fuente&a=listarFuente&idIndicador=$fila->idIndicador&idSubproceso=$_GET[idSubproceso]&idMapaProcesos=$_GET[idMapaProcesos]'"?> class="btn btn-primary btn-xs"><i class="fa fa-check"></i>datos</a >
+          <a  <?php echo "href='?c=formula&a=listarFormula&idIndicador=$fila->idIndicador&idSubproceso=$_GET[idSubproceso]&idMapaProcesos=$_GET[idMapaProcesos]&proceso=$_GET[proceso]'"?> class="btn btn-success btn-xs"><i class="fa fa-superscript"></i> fórmula</a >
+          <a  <?php echo "href='?c=fuente&a=listarFuente&idIndicador=$fila->idIndicador&idSubproceso=$_GET[idSubproceso]&idMapaProcesos=$_GET[idMapaProcesos]&proceso=$_GET[proceso]'"?> class="btn btn-warning btn-xs"><i class="fa  fa-plus-circle"></i> datos</a >
+          <a  <?php echo "href='?c=indicador&a=tablero&idIndicador=$fila->idIndicador&idSubproceso=$_GET[idSubproceso]&idMapaProcesos=$_GET[idMapaProcesos]&proceso=$_GET[proceso]'"?> class="btn btn-info btn-xs"><i class="fa fa-dashboard"></i>Tablero</a >
         <?php endif; ?>
 
         <a <?php echo "href='?c=indicador&a=get&idIndicador=$fila->idIndicador'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+
         <a <?php echo "href='?c=indicador&a=eliminar&idIndicador=$fila->idIndicador'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
       </td>
     </tr>

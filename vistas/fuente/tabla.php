@@ -6,7 +6,10 @@
       <th><i class="fa fa-bullhorn"></i> Periodo</th>
       <th class="hidden-phone"><i class="fa fa-bookmark"></i> <?php echo $dataModal->resultado->param1; ?></th>
       <th class="hidden-phone"><i class="fa fa-bookmark"></i> <?php echo $dataModal->resultado->param2; ?></th>
+      <?php if ($dataModal->resultado->param3!="0"): ?>
       <th class="hidden-phone"><i class="fa fa-bookmark"></i> <?php echo $dataModal->resultado->param3; ?></th>
+      <?php endif; ?>
+
       <th class="hidden-phone"><i class="fa fa-question-circle"></i>Resultado</th>
       <th class="hidden-phone"><i class="fa fa-question-circle"></i>Fecha Inicio</th>
       <th class="hidden-phone"><i class="fa fa-question-circle"></i>Fecha Fin</th>
@@ -26,7 +29,9 @@
       </td>
       <td class="hidden-phone"><?php echo $fila->param1; ?></td>
       <td class="hidden-phone"><?php echo $fila->param2; ?></td>
-      <td class="hidden-phone"><?php echo $fila->param3; ?></td>
+      <?php if ($fila->param3!="0"): ?>
+        <td class="hidden-phone"><?php echo $fila->param3; ?></td>
+      <?php endif; ?>
       <td class="hidden-phone"><?php echo $fila->resultado; ?></td>
       <td class="hidden-phone"><?php echo $fila->inicio; ?></td>
       <td class="hidden-phone"><?php echo $fila->fin; ?></td>
@@ -37,8 +42,8 @@
       <?php endif; ?>
 
       <td>
-        <a <?php echo "href='?c=unidadNegocio'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
-        <a <?php echo "href='?c=unidadNegocio&a=eliminar'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
+        <a <?php echo "href=''"; ?> class="btn btn-primary btn-xs editar disabled"><i class="fa fa-pencil"></i></a>
+        <a <?php echo "href='?c=fuente&a=eliminar&idFuente=$fila->idFuente'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
       </td>
     </tr>
     <?php

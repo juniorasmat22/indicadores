@@ -9,4 +9,8 @@ class IndicadorModelo extends Modelo{
 		$indicador->opcion = 6;
 		return $this->queryObjects($this->sp,$indicador);
 	}
+	public function listar_indicador($indicador){//para la tabla- listar indicadores
+		$indicador->opcion = 5;
+		return $this->queryObjeto($this->sp,$indicador);
+	}
 }

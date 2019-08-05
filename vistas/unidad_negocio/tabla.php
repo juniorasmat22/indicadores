@@ -40,9 +40,6 @@
           <td colspan="6"><div class="alert alert-danger"><b>Oh no!</b>Aún no existen datos para mostar.</div></td>
 
         </tr>
-
-
-        <script type="text/javascript">alert('error al obtener datos')</script>
         <?php
       }
     ?>

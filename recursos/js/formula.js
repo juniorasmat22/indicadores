@@ -9,7 +9,7 @@ $(document).on('ready', function(){
                 document.getElementById('p3').style.display ='';
                 document.getElementById('param2').value="";
                 document.getElementById('param3').value="";
-              
+
                break;
 
                case "6":
@@ -31,10 +31,3 @@ $(document).on('ready', function(){
 
          });
 });
-
-function enviarFormula(){
-var radio;
-radio = $('input:radio[name=tipo]:checked').val();
-console.log(radio);
-
-}

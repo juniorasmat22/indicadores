@@ -49,22 +49,22 @@
               </div>
             </div>
           </div>
-          <div class="form-group" id="p1">
+          <div class="form-group" >
             <label for="param1" class="control-label col-lg-2">Parametro 1</label>
             <div class="col-lg-10">
-              <input class=" form-control" required id="param1" name="param1" />
+              <input class=" form-control" required  name="param1" />
             </div>
           </div>
-          <div class="form-group " id="p2">
+          <div class="form-group " >
             <label for="param2" class="control-label col-lg-2">Parametro 2</label>
             <div class="col-lg-10">
-              <input class=" form-control" required id="param2" name="param2"   />
+              <input class=" form-control" required  name="param2"   />
             </div>
           </div>
-          <div class="form-group " id="p3">
+          <div class="form-group " >
             <label for="param3" class="control-label col-lg-2">Parametro 3</label>
             <div class="col-lg-10">
-              <input class=" form-control" required id="param3" name="param3" />
+              <input class=" form-control" required  name="param3" />
             </div>
           </div>
 

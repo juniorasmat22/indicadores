@@ -8,7 +8,7 @@
         <div class="form">
           <form class="cmxform form-horizontal style-form" method="post" action="?c=fuente&a=crear" id="formCrear" autocomplete="off">
               <input type="hidden" name="idIndicador" value="<?php echo $_GET['idIndicador']; ?>">
-              <input type="text" name="tipo" value="<?php echo $dataModal->resultado->tipo; ?>">
+              <input type="hidden" name="tipo" value="<?php echo $dataModal->resultado->tipo; ?>">
               <div class="form-group" >
                 <label for="periodo" class="control-label col-lg-4">Periodo</label>
                 <div class="col-lg-8">

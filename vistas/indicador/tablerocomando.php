@@ -4,7 +4,10 @@
   <div class="row mt">
     <div class="col-md-12">
       <div class="content-panel">
-          <table class="table table-advance table-hover table-bordered cell-border" style="background-color: white;">
+          <table class="table table-striped table-advance table-hover table-bordered">
+            <tbody>
+
+
           <tr>
             <th colspan="2" class="centered">Proceso</th>
             <th colspan="7"><?php echo $_GET['proceso'] ?></th>
@@ -48,6 +51,7 @@
                     <td colspan="2"><b>INICIATIVAS</b></td>
                     <td colspan="7"><?php echo $respuesta->resultado->iniciativas; ?></td>
           </tr>
+                </tbody>
         </table>
       </div>
       <!-- /content-panel -->

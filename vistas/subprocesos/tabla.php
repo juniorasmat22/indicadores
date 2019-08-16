@@ -9,7 +9,7 @@ $subProcesoControlador = new SubProcesoControlador();
   <thead>
     <tr>
       <th><i class="fa fa-bullhorn"></i> Nombre</th>
-      <th><i class="fa fa-bookmark"></i>Descripción</th>
+
       <th><i class="fa fa-bookmark"></i>Sub procesos Nivel-2</th>
       <th><i class=" fa fa-edit"></i> Estado</th>
       <th><i class=" fa fa-edit"></i> Opciones</th>
@@ -27,14 +27,14 @@ $subProcesoControlador = new SubProcesoControlador();
         <td>
           <a href=""><?php echo $fila->nombre; ?></a>
         </td>
-        <td><?php echo $fila->descripcion; ?></td>
+
         <td>
           <table class="table table-striped table-advance table-hover">
 
             <thead>
               <tr>
                 <th><i class="fa fa-bullhorn"></i> Nombre</th>
-                <th><i class="fa fa-bookmark"></i>Descripción</th>
+
                 <th><i class=" fa fa-edit"></i> Estado</th>
                 <th><i class=" fa fa-edit"></i> Opciones</th>
               </tr>
@@ -52,7 +52,7 @@ $subProcesoControlador = new SubProcesoControlador();
                   <td>
                     <a href=""><?php echo $fila2->nombre; ?></a>
                   </td>
-                  <td><?php echo $fila2->descripcion; ?></td>
+                  
                   <?php if ($fila2->estado==1): ?>
                     <td><span class="label label-success label-mini">activo</span></td>
                   <?php else: ?>

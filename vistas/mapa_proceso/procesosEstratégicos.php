@@ -20,7 +20,7 @@ $verifica_subprocesos=false;
                             <section class="task-panel tasks-widget">
                               <div class="panel-heading">
                                 <div class="pull-left">
-                                  <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 2</span></h5>
+                                  <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 1</span></h5>
                                 </div>
                                 <br>
                               </div>
@@ -45,7 +45,7 @@ $verifica_subprocesos=false;
                                               <div id="<?php echo $c.$fila->idSubproceso; ?>" class="accordion-body collapse">
                                                 <div class="panel-heading">
                                                   <div class="pull-left">
-                                                    <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 3</span></h5>
+                                                    <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 2</span></h5>
                                                   </div>
                                                   <br>
                                                 </div>
@@ -86,7 +86,7 @@ $verifica_subprocesos=false;
                                                       <?php endforeach;
                                                     }else {
                                                       $verifica_subprocesos=false;
-                                                    echo "<div class='alert alert-danger'>Aun no tiene subprocesos de nivel 3 para este subproceso</div>";
+                                                    echo "<div class='alert alert-danger'>Aun no tiene subprocesos de nivel 2 para este subproceso</div>";
                                                     }
                                                    ?>
 
@@ -108,7 +108,7 @@ $verifica_subprocesos=false;
                                         </li>
                                         <?php $verifica_subprocesos=false; endforeach;
                                       }else{
-                                        echo "<div class='alert alert-danger'>Aun no tiene subprocesos de nivel 2 para este subproceso</div>";
+                                        echo "<div class='alert alert-danger'>Aun no tiene subprocesos para este Proceso</div>";
                                       }
                                      ?>
                                   </ul>
@@ -133,7 +133,7 @@ $verifica_subprocesos=false;
                 <?php endforeach; ?>
                 </div>
               <?php else: ?>
-                  <div class="alert alert-danger"><b>Oh no!</b> Aun no tiene procesos Misionales Registrados</div>
+                  <div class="alert alert-danger"><b>Oh no!</b> Aun no tiene procesos Estratégicos Registrados</div>
               <?php endif; ?>
 
             <?php  } else {?>

@@ -13,7 +13,7 @@ class SubProcesoModelo extends Modelo{
 		$SubProceso->opcion = 7;
 		return $this->queryObjects($this->sp,$SubProceso);
 	}
-	public function listar_subprocesosNivel2($SubProceso){//listar de subprocesos dntro de cada subproceso
+	public function listar_subprocesosNivel2($SubProceso){//listar de subprocesos dntro de cada subproceso tabla
 		$SubProceso->opcion = 8;
 		return $this->queryObjects($this->sp,$SubProceso);
 	}

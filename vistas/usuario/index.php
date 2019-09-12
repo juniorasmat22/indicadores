@@ -1,5 +1,6 @@
 <h3><i class="fa fa-angle-right"></i> Usuarios</h3>
 <button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nuevo Usuario</button>
+<a type="button" class="btn btn-theme04" href="?c=usuario&a=reporte" target="_blank"><i class="fa fa-file-pdf-o"></i> Imprimir</a>
 <div class="row mt">
   <div class="col-md-12">
     <div class="content-panel">

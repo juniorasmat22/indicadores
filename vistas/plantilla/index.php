@@ -25,7 +25,8 @@
   <link href="recursos/dashio/css/style-responsive.css" rel="stylesheet">
   <script src="recursos/dashio/lib/chart-master/Chart.js"></script>
   <link rel="stylesheet" href="recursos/dashio/css/to-do.css">
-
+<!--imagenes-->
+  <link rel="stylesheet" type="text/css" href="recursos/dashio/lib/bootstrap-fileupload/bootstrap-fileupload.css" />
 <!--grafico -->
     <script src="recursos/grafico/fusioncharts.js"></script>
 
@@ -343,8 +344,10 @@
     <script src="recursos/dashio/lib/zabuto_calendar.js"></script>
   <script src="recursos/js/ajax.js"></script>
   <script src="recursos/dashio/lib/jquery-ui-1.9.2.custom.min.js"></script>
-    <script type="text/javascript" src="recursos/dashio/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="recursos/dashio/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="recursos/dashio/lib/advanced-form-components.js"></script>
+
+<script type="text/javascript" src="recursos/dashio/lib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
   <?php
   $var = isset($_GET['c']) ? $_GET['c'] : '';
   if($var==''){

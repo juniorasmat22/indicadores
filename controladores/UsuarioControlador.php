@@ -25,6 +25,10 @@ class UsuarioControlador extends Controlador
 			require_once 'vistas/login/login.php';
 		}
 	}
+	public function Reporte()
+	{
+		require_once "vistas/usuario/reporte.php";
+	}
 
 	public function cerrarSesion(){
 		session_destroy();

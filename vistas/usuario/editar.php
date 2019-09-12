@@ -1,11 +1,7 @@
-<?php
-namespace controladores;
-$PersonaControlador = new PersonaControlador();
-$respuesta = $PersonaControlador->modelo->listarPersonas($PersonaControlador->entidad);
-?>
+
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  <h4 class="modal-title" id="myModalLabel">Registar Usuario</h4>
+  <h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
 </div>
 <div class="modal-body">
   <div class="row mt">
@@ -13,20 +9,7 @@ $respuesta = $PersonaControlador->modelo->listarPersonas($PersonaControlador->en
         <div class="form">
           <form class="cmxform form-horizontal style-form" method="post" action="?c=usuario&a=editar" id="formEditar" autocomplete="off">
             <input type="hidden" name="idUsuario">
-            <div class="form-group ">
-              <label for="emp_id" class="control-label col-lg-2">Seleccione Empleado</label>
-                  <div class="col-lg-10">
-                      <select id="idPersona" name="idPersona" class="form-control" required>
-                                <?php if($respuesta->respuesta): $fila=$respuesta->resultado ;?>
-                                  <?php foreach ($fila as $empleado): ?>
-                                    <option value="<?php echo $empleado->idPersona; ?>"><?php echo $empleado->nombre." ".$empleado->apellido; ?></option>
-                                  <?php endforeach ?>
-                                <?php else: ?>
-                                  <option value="0" disabled >Todos los usuarios ya tiene una cuenta</option>
-                                <?php endif ?>
-                        </select>
-                  </div>
-            </div>
+            <input type="hidden" name="idPersona">
             <div class="form-group ">
               <label for="usuario" class="control-label col-lg-2">Nombre de usuario</label>
               <div class="col-lg-10">
@@ -61,7 +44,7 @@ $respuesta = $PersonaControlador->modelo->listarPersonas($PersonaControlador->en
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Registrar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
             </div>
           </form>
         </div>

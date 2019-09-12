@@ -8,7 +8,7 @@ class Persona extends Entidad
 	public $apellido;
 	public $dni;
 	public $estado;
-	public $persona;
+
 
 
 	public function setConsulta($filaConsulta){
@@ -17,7 +17,6 @@ class Persona extends Entidad
 		$this->apellido=$this->obtenerColumna($filaConsulta,'apellido');
 		$this->dni=$this->obtenerColumna($filaConsulta,'dni');
 		$this->estado=$this->obtenerColumna($filaConsulta,'estado');
-		$this->persona=$this->obtenerColumna($filaConsulta,'persona');
 	}
 	public function bindValues($statement){
 		$statement->bindValue(1,$this->idPersona,PDO::PARAM_INT);

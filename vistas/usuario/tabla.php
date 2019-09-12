@@ -3,7 +3,7 @@
   <hr>
   <thead>
     <tr>
-      <th><i class="fa fa-bullhorn"></i> persona</th>
+      <th><i class="fa fa-bullhorn"></i> Empleado</th>
       <th class="hidden-phone"><i class="fa fa-question-circle"></i>USUARIO</th>
       <th><i class="fa fa-bookmark"></i>Contraseña</th>
         <th><i class="fa fa-bookmark"></i>Rol</th>
@@ -19,7 +19,7 @@
          ?>
     <tr>
       <td>
-        <a href="basic_table.html#"><?php echo $fila->idPersona; ?></a>
+        <a href="basic_table.html#"><?php echo $fila->persona; ?></a>
       </td>
       <td class="hidden-phone"><?php echo $fila->usuario ?></td>
       <td><?php echo $fila->pass; ?></td>
@@ -47,8 +47,10 @@
 
       <td>
 
-        <a <?php echo "href='?c=persona&a=get&idPersona=$fila->idPersona'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
-        <a <?php echo "href='?c=persona&a=eliminar&idPersona=$fila->idPersona'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
+        <a <?php echo "href='?c=usuario&a=get&idUsuario=$fila->idUsuario'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+        <?php if ($fila->rol!=1): ?>
+          <a <?php echo "href='?c=usuario&a=eliminar&idUsuario=$fila->idUsuario'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
+        <?php endif; ?>
       </td>
     </tr>
     <?php

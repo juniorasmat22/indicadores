@@ -43,7 +43,7 @@ BEGIN
 		set registrosPagina=10;
 		set limiteInferior=(pagina-1)*registrosPagina;
 
-		select * from usuario where
+		select usuario.*,concat(p.nombre,' ',p.apellido) as nombre from usuario inner join persona p on p.id_persona=usuario.id_persona  where
       (usuario like concat('%',usuario,'%') or usuario is null ) and
       (usuario like concat('%',usuario,'%') or usuario is null)
     limit limiteInferior,registrosPagina;

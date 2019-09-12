@@ -9,6 +9,7 @@ class Usuario extends Entidad
 	public $pass;
 	public $rol;
 	public $estado;
+	public $persona;
 
 
 	public function setConsulta($filaConsulta){
@@ -18,6 +19,7 @@ class Usuario extends Entidad
 		$this->pass=$this->obtenerColumna($filaConsulta,'pass');
 		$this->rol=$this->obtenerColumna($filaConsulta,'rol');
 		$this->estado=$this->obtenerColumna($filaConsulta,'estado');
+		$this->persona=$this->obtenerColumna($filaConsulta,'nombre');
 	}
 	public function bindValues($statement){
 		$statement->bindValue(1,$this->idUsuario,PDO::PARAM_INT);
@@ -45,6 +47,7 @@ class Usuario extends Entidad
     $_SESSION['id_usuario'] = $this->idUsuario;
     $_SESSION['id_persona'] = $this->idPersona;
 		$_SESSION['usuario'] = $this->usuario;
+		$_SESSION['rol'] = $this->rol;
 		$_SESSION['estado'] = $this->estado;
 	}
 }

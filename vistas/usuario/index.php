@@ -29,12 +29,12 @@
     </div>
   </div>
   <script type="text/javascript">
-    function funcionOpcionEditar(usuario){
-      $('#formEditar input[name="idUsuario"]').val(usuario.idUsuario);
-      $('#formEditar input[name="idPersona"]').val(usuario.idPersona);
-      $('#formEditar input[name="usuario"]').val(usuario.usuario);
-      $('#formEditar input[name="pass"]').val(usuario.pass);
-      $('#formEditar select[name="rol"]').val(usuario.rol);
-      $('#formEditar select[name="estado"]').val(usuario.estado);
+    function funcionOpcionEditar(user){
+      $('#formEditar input[name="idUsuario"]').val(user.idUsuario);
+      $('#formEditar input[name="idPersona"]').val(user.idPersona);
+      $('#formEditar input[name="usuario"]').val(user.usuario);
+      $('#formEditar input[name="pass"]').val(user.pass);
+      $('#formEditar select[name="rol"]').val(user.rol);
+      $('#formEditar select[name="estado"]').val(user.estado);
     }
   </script>

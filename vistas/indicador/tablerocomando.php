@@ -4,7 +4,7 @@
   <div class="row mt">
     <div class="col-md-12">
       <div class="content-panel">
-          <table class="table table-striped table-advance table-hover table-bordered">
+          <table class="table table-advance table-hover table-bordered">
             <tbody>
 
 
@@ -21,36 +21,59 @@
             <th colspan="7"><?php echo $respuesta->resultado->meta; ?></th>
           </tr>
           <tr>
-            <th colspan="2" class="centered">Responsable</th>
+            <th colspan="2" class="centered">Código</th>
             <th colspan="7"><?php echo $respuesta->resultado->responsable; ?></th>
           </tr>
-          <tr class="centered">
-
-                <td rowspan='2' colspan="2" style="padding-top: 25px;"><b>Fórmula</b></td>
-                <td rowspan='2'style="padding-top: 25px;"><b>Linea Base</td>
-                <td rowspan='2' style="padding-top: 25px;"><b>Fuente de Verificación</b></td>
-                <td rowspan='2' style="padding-top: 25px;"><b>Frecuencia</b></td>
-                <td colspan='3'><b>Semáforo</b></td>
+          <tr>
+            <th colspan="2" class="centered" style="background:rgb(218,238,243);">Fórmula de Cálculo</th>
+            <th colspan="7"><?php echo $retVal = ($formula->resultado==null) ? "<strong style=color:red;>NO ha registrado fórmula</strong>" : $formula->resultado->formula ; ?></th>
           </tr>
-          <tr style="color:white;" class="centered">
+
+          <tr >
+                <td  colspan="2" style="padding-top: 25px; background:rgb(218,238,243);" class="centered"><b>Responsable</b></td>
+                <td style="padding-top: 25px;"><b><?php echo $respuesta->resultado->responsable; ?></td>
+                <td  style="padding-top: 25px;background:rgb(218,238,243);" class="centered"><b>Tipo</b></td>
+                <td  style="padding-top: 25px;"><b><?php echo $respuesta->resultado->tipo; ?></b></td>
+                <td  style="padding-top: 25px;background:rgb(218,238,243);" class="centered" ><b>Unidad</b></td>
+                <td  style="padding-top: 25px;"><b><?php echo $respuesta->resultado->unidad; ?></b></td>
+          </tr>
+          <tr>
+            <th colspan="2" class="centered" style="background:rgb(218,238,243);">Fuente de Vericacion</th>
+            <th colspan="7"><?php echo $respuesta->resultado->fv; ; ?></th>
+          </tr>
+          <tr>
+            <th colspan="2" class="centered" style="background:rgb(218,238,243);">Frecuencia de Medicion</th>
+            <th colspan="7"><?php echo $respuesta->resultado->frecuencia; ?></th>
+          </tr>
+          <tr>
+
+
+            <th  class="centered" style="background:rgb(218,238,243);">Linea Base</th>
+            <th ><?php echo $respuesta->resultado->lineaBase; ?></th>
+          </tr>
+
+          <tr class="centered">
+                    <td colspan="2" style="background:rgb(218,238,243);"><b>INICIATIVAS</b></td>
+                    <td colspan="7"><?php echo $respuesta->resultado->iniciativas; ?></td>
+          </tr>
+          <!--  -->
+        <!--  <tr style="color:white;" class="centered">
                 <td style="background-color: #cc0000;"><b>ROJO</b></td>
                 <td style="background-color: #ffcc00;"><b>AMARILLO</b></td>
                 <td style="background-color: #006600;"><b>VERDE</b></td>
-          </tr>
-          <tr class="centered">
+          </tr>-->
 
-                    <td colspan="2" ><?php echo $formula->resultado->formula; ?></td>
+        <!--  <tr class="centered">
+
+
                     <td ><?php echo $respuesta->resultado->lineaBase; ?></td>
                     <td ><?php echo $respuesta->resultado->fv; ?></td>
                     <td ><?php echo $respuesta->resultado->frecuencia; ?></td>
                     <td id="t_rojo"><?php echo "0-".$respuesta->resultado->rojo; ?></td>
                     <td id="t_amarillo"><?php echo $respuesta->resultado->rojo."-".$respuesta->resultado->amarillo; ?></td>
                     <td id="t_verde"><?php echo $respuesta->resultado->amarillo."-".$respuesta->resultado->verde; ?></td>
-          </tr>
-          <tr>
-                    <td colspan="2"><b>INICIATIVAS</b></td>
-                    <td colspan="7"><?php echo $respuesta->resultado->iniciativas; ?></td>
-          </tr>
+          </tr>-->
+
                 </tbody>
         </table>
       </div>

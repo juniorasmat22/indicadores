@@ -17,7 +17,7 @@
             <div class="form-group ">
               <label for="meta" class="control-label col-lg-2">Objetivo</label>
               <div class="col-lg-10">
-                <input class=" form-control" required id="meta" name="meta"  type="text"   />
+                <textarea class=" form-control" required id="meta" name="meta" ></textarea>
               </div>
             </div>
             <div class="form-group ">

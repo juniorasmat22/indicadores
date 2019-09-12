@@ -35,7 +35,7 @@
       $('#formEditar input[name="idIndicador"]').val(indicador.idIndicador);
       $('#formEditar input[name="idSubproceso"]').val(indicador.idSubproceso);
       $('#formEditar textarea[name="descripcion"]').val(indicador.descripcion);
-      $('#formEditar input[name="meta"]').val(indicador.meta);
+      $('#formEditar textarea[name="meta"]').val(indicador.meta);
       $('#formEditar textarea[name="iniciativas"]').val(indicador.iniciativas);
       $('#formEditar input[name="responsable"]').val(indicador.responsable);
       $('#formEditar input[name="lineaBase"]').val(indicador.lineaBase);

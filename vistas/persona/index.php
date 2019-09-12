@@ -1,5 +1,5 @@
-<h3><i class="fa fa-angle-right"></i> Usuarios</h3>
-<button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nuevo Usuario</button>
+<h3><i class="fa fa-angle-right"></i> Empleados</h3>
+<button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nuevo Empleado</button>
 <div class="row mt">
   <div class="col-md-12">
     <div class="content-panel">
@@ -29,12 +29,11 @@
     </div>
   </div>
   <script type="text/javascript">
-    function funcionOpcionEditar(usuario){
-      $('#formEditar input[name="idUsuario"]').val(usuario.idUsuario);
-      $('#formEditar input[name="idPersona"]').val(usuario.idPersona);
-      $('#formEditar input[name="usuario"]').val(usuario.usuario);
-      $('#formEditar input[name="pass"]').val(usuario.pass);
-      $('#formEditar select[name="rol"]').val(usuario.rol);
-      $('#formEditar select[name="estado"]').val(usuario.estado);
+    function funcionOpcionEditar(persona){
+      $('#formEditar input[name="idPersona"]').val(persona.idPersona);
+      $('#formEditar input[name="nombre"]').val(persona.nombre);
+      $('#formEditar input[name="apellido"]').val(persona.apellido);
+      $('#formEditar input[name="dni"]').val(persona.dni);
+      $('#formEditar select[name="estado"]').val(persona.estado);
     }
   </script>

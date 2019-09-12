@@ -270,6 +270,20 @@
               <li><a href="font_awesome.html">Font Awesome</a></li>-->
             </ul>
           </li>
+          <li class="sub-menu">
+            <a  href="javascript:;">
+              <i class="fa fa-users"></i>
+              <span>Gestionar Usuarios</span>
+              </a>
+            <ul class="sub">
+              <li class="active"><a href="?c=persona"> Empleados</a></li>
+              <li class="active"><a href="?c=usuario">  Usuarios</a></li>
+              <!--<li><a href="buttons.html">Buttons</a></li>
+              <li><a href="panels.html">Panels</a></li>
+              <li><a href="font_awesome.html">Font Awesome</a></li>-->
+            </ul>
+          </li>
+
 
         </ul>
         <!-- sidebar menu end-->

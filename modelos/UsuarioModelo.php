@@ -3,7 +3,7 @@ namespace modelos;
 
 class UsuarioModelo extends Modelo{
 	public function __construct(){
-		parent::__construct('sp_usuario_crud(?,?,?,?,?,?,?)','Usuario');
+		parent::__construct('sp_usuario_crud(?,?,?,?,?,?,?,?)','Usuario');
 	}
 
 	public function login($usuario){

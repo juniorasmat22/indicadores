@@ -8,6 +8,7 @@ CREATE PROCEDURE sp_usuario_crud(
   idPersona int,
   usuario varchar(45),
   pass varchar(45),
+  rol int,
   estado int,
   opcion int,
   pagina int
@@ -18,8 +19,8 @@ BEGIN
 
   -- crear
 	if opcion=1 then
-		insert usuarios (id_persona,usuario,pass,estado)
-		values (idPersona,usuario,pass,estado);
+		insert usuario (id_persona,usuario,pass,rol,estado)
+		values (idPersona,usuario,pass,rol,estado);
    end if;
 
   -- editar
@@ -27,7 +28,8 @@ BEGIN
     update usuario set
       usuario=usuario,
       pass=pass,
-      estado = estado
+      estado = estado,
+      rol=rol
     where id_usuario = idUsuario;
   end if;
 

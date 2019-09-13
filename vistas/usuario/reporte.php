@@ -22,7 +22,7 @@ function Header()
 // Movernos a la derecha
     $this->Cell(80);
     // Título
-    $this->Cell(30,10,'ESCUELA DE POSGRADO',0,0,'C');
+    $this->Cell(30,10,utf8_decode('PROGRAMA DE ENFERMERÍA'),0,0,'C');
     // Salto de línea
     $this->Ln(20);
 }
@@ -35,7 +35,7 @@ function Footer()
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Número de página
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
 }
 }
 
@@ -47,15 +47,7 @@ $pdf->SetFont('Arial','I',12);
 $pdf->Cell(160);
 $pdf->Ln();
 $pdf->Cell(80);
-$pdf->Cell(30,10,'REGISTRO DE ASISTENCIA',0,0,'C');
-$pdf->Ln(10);
-$pdf->SetFont('Arial','',10);
-$pdf->Ln(7);
-$pdf->Cell(20,2,"DOCENTE: ",'C');
-$pdf->Ln(7);
-$pdf->Cell(20,2,"AULA : ");
-$pdf->Ln(7);
-$pdf->Cell(20,2,"FECHA : ");
+$pdf->Cell(30,10,'Lista de Usuarios',0,0,'C');
 
 $pdf->Ln(10);
 //TABLA
@@ -67,21 +59,20 @@ $pdf->SetDrawColor(0,0,0);
 $pdf->Cell(15);
 $N=utf8_decode("N°");
 $pdf->Cell(20,5,$N,1,0,'C',1);
-$pdf->Cell(25,5,"DNI",1,0,'C',1);
-$pdf->Cell(70,5,"APELLIDOS Y NOMBRES",1,0,'C',1);
-$pdf->Cell(30,5,"GRADO",1,0,'C',1);
-$pdf->Cell(28,5,"ASISTENCIA",1,0,'C',1);
+$pdf->Cell(60,5,"DNI",1,0,'C',1);
+$pdf->Cell(90,5,"APELLIDOS Y NOMBRES",1,0,'C',1);
+
 //linea
-//$pdf->SetDrawColor(61,174,233);
+$pdf->SetDrawColor(61,174,233);
 //mas ancha la linea
-//$pdf->SetLineWidth(0.5);
-//$pdf->Line(25,100,190,100);
+$pdf->SetLineWidth(0.5);
+$pdf->Line(25,100,190,100);
 $pdf->Ln();
 $pdf->SetFont('Arial','',12);
 $pdf->SetFillColor(255,255,255);
 $pdf->SetTextColor(0,0,0);
-/*$pdf->SetDrawColor(0,0,0);
-$num=0;
+$pdf->SetDrawColor(0,0,0);
+/*$num=0;
 foreach ($alumnos->resultado as $alumno){
 	$pdf->Cell(15);
 $num+=1;

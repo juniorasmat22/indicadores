@@ -86,5 +86,9 @@ BEGIN
 	if opcion=6 then
 		select * from indicador where id_sub_proceso=idSubProceso;
   end if;
+  -- listar indicadores activos por procesos
+  if opcion=7 then
+  select * from indicador where id_sub_proceso=idSubProceso and estado=1;
+  end if;
 END $$
 DELIMITER ;

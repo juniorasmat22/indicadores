@@ -1,5 +1,6 @@
 <h3><i class="fa fa-angle-right"></i> Tablero de Comando</h3>
 <a href="?c=indicador&a=listarIndicadores&idSubproceso=<?php echo $_GET['idSubproceso']; ?>&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>&proceso=<?php echo $_GET['proceso'] ?>" type="button" class="btn btn-theme" ><i class="fa fa-eye"></i> Ver Indicadores</a>
+<a type="button" class="btn btn-theme04" href="?c=indicador&a=reporte&idIndicador=<?php echo $_GET['idIndicador']; ?>&proceso=<?php echo $_GET['proceso']; ?>" target="_blank"><i class="fa fa-file-pdf-o"></i> Imprimir</a>
 <?php if ($respuesta->respuesta): ?>
   <div class="row mt">
     <div class="col-md-12">

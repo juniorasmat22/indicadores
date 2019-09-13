@@ -1,7 +1,7 @@
 <h3><i class="fa fa-angle-right"></i> Indicadores</h3>
 <button type="button" class="btn btn-theme" data-toggle="modal" data-target="#crearModal"><i class="fa fa-check"></i> Nuevo Indicador</button>
 <a href="?c=mapaProcesos&a=ver_mapa&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>" type="button" class="btn btn-theme" ><i class="fa fa-eye"></i> Ver Mapa</a>
-
+<a type="button" class="btn btn-theme04" href="?c=indicador&a=reporte2&idSubproceso=<?php echo $_GET['idSubproceso']; ?>&proceso=<?php echo $_GET['proceso'];?> " target="_blank"><i class="fa fa-file-pdf-o"></i> Imprimir</a>
 <div class="row mt">
   <div class="col-md-12 ">
     <div class="content-panel ">

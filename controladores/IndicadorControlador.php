@@ -33,4 +33,20 @@ class IndicadorControlador extends Controlador
     $vista='vistas/indicador/tablerocomando.php';
     require_once 'vistas/plantilla/index.php';
   }
+  public function reporte()
+  {
+    $this->entidad->idIndicador=isset($_GET['idIndicador'])?$_GET['idIndicador']:null;
+    $pagina=isset($_GET['p'])?$_GET['p']:1;
+    $respuesta=$this->modelo->listar_indicador($this->entidad);
+    $this->Formula_Controlador->entidad->idIndicador=isset($_GET['idIndicador'])?$_GET['idIndicador']:null;
+    $formula=$this->Formula_Controlador->modelo->listar_formula_X($this->Formula_Controlador->entidad);
+    require_once "vistas/indicador/reporte.php";
+  }
+  public function reporte2()
+  {
+    $this->entidad->idSubproceso=isset($_GET['idSubproceso'])?$_GET['idSubproceso']:null;
+    $pagina=isset($_GET['p'])?$_GET['p']:1;
+    $respuesta=$this->modelo->listar_indicadores($this->entidad);
+    require_once "vistas/indicador/reporte2.php";
+  }
 }

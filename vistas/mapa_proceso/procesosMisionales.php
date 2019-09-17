@@ -71,7 +71,61 @@ $verifica_subprocesos=false;
                                                             </a>
                                                         </div>
                                                         <div id="<?php echo $c.$fila3->idSubproceso.$fila3->idSubPro; ?>" class="accordion-body collapse">
+                                                          <div class="panel-heading">
+                                                            <div class="pull-left">
+                                                              <h5><i class="fa fa-tasks"></i> Sub Procesos <span class="badge bg-theme">nivel 3</span></h5>
+                                                            </div>
+                                                            <br>
+                                                          </div>
                                                           <div class="accordion-inner">
+                                                            <!--inicia nivel 3-->
+                                                            <div class="panel-body">
+                                                              <div class="task-content">
+                                                                <ul class="task-list">
+                                                            <?php
+
+                                                              $subProcesoControlador->entidad->idSubPro=$fila3->idSubproceso;
+                                                              $subPorcesosSubnivel3 = $subProcesoControlador->modelo->listar_subprocesosNivel($subProcesoControlador->entidad);
+                                                              //var_dump($subPorcesosSubnivel);
+                                                              if ($subPorcesosSubnivel3->respuesta) {
+                                                                $verifica_subprocesos3=true;
+                                                                $filas4=$subPorcesosSubnivel3->resultado;
+                                                              foreach ($filas4 as $fila4): ?>
+                                                              <li>
+                                                              <div class="task-title">
+                                                                <div class="accordion-group">
+                                                                  <div class="accordion-heading">
+                                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" type="button" class=""href="faq.html#<?php echo $c.$fila4->idSubproceso.$fila4->idSubPro ; ?>">
+                                                                      <em class="glyphicon glyphicon-chevron-right icon-fixed-width"></em><?php echo $fila4->nombre; ?>
+                                                                      </a>
+                                                                  </div>
+                                                                  <div id="<?php echo $c.$fila4->idSubproceso.$fila4->idSubPro; ?>" class="accordion-body collapse">
+                                                                    <div class="accordion-inner">
+
+                                                                      <p><?php echo $fila4->descripcion; ?></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="pull-right hidden-phone">
+                                                                  <a href="?c=indicador&a=listarIndicadores&idSubproceso=<?php echo $fila4->idSubproceso; ?>&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>&proceso=<?php echo $fila4->nombre; ?>" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a>
+                                                                  <a href="?c=subproceso&a=get&idProceso=<?php echo $fila->idProceso; ?>&idSubproceso=<?php echo $fila4->idSubproceso;?>'" class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+                                                                  <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                                                </div>
+                                                              </div>
+                                                            </li>
+                                                                <?php endforeach;
+                                                              }else {
+                                                                $verifica_subprocesos3=false;
+                                                              echo "<div class='alert alert-danger'>Aun no tiene subprocesos de nivel 3 para este subproceso</div>";
+                                                              }
+                                                             ?>
+
+                                                            <p><?php echo $fila->descripcion; ?></p>
+
+                                                            </ul>
+                                                          </div>
+                                                        </div>
+                                                        <!-- fin nivel3-->
                                                             <p><?php echo $fila3->descripcion; ?></p>
                                                           </div>
                                                         </div>

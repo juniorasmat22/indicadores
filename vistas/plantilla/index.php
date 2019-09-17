@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="recursos/dashio/lib/bootstrap-fileupload/bootstrap-fileupload.css" />
 <!--grafico -->
     <script src="recursos/grafico/fusioncharts.js"></script>
-
+      <link rel="stylesheet" href="recursos/dashio/lib/xchart/xcharts.css">
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
@@ -348,6 +348,7 @@
 <script src="recursos/dashio/lib/advanced-form-components.js"></script>
 
 <script type="text/javascript" src="recursos/dashio/lib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+
   <?php
   $var = isset($_GET['c']) ? $_GET['c'] : '';
   if($var==''){
@@ -361,6 +362,7 @@
   if ($var=="formula") {
     echo "<script src='recursos/js/formula.js'></script>";
   }
+  
   ?>
 </body>
 

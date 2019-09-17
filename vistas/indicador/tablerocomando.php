@@ -103,7 +103,7 @@
             <hr>
           </div>
           <div class="icn-main-container">
-            <table class="table table-striped table-advance table-hover">
+            <table class="table table-striped table-advance table-hover table-responsive">
 
               <hr>
               <thead>
@@ -158,6 +158,70 @@
     </div>
     <!--  /col-lg-12 -->
   </div>
+  <!--grafico de barra-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="custom-box">
+        <div class="servicetitle">
+          <h4>Gráfico de barras</h4>
+          <hr>
+        </div>
+
+
+            <figure class="demo-xchart" id="chart"></figure>
+
+
+
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="custom-box">
+      <div class="servicetitle">
+        <h4><?php echo $respuesta->resultado->descripcion; ?></h4>
+        <hr>
+
+          <div class="custom-bar-chart">
+            <ul class="y-axis">
+              <li><span>100</span></li>
+              <li><span>80</span></li>
+              <li><span>60</span></li>
+              <li><span>40</span></li>
+              <li><span>20</span></li>
+              <li><span>0</span></li>
+            </ul>
+            <?php if ($fuente->respuesta){
+              $filas=$fuente->resultado;
+              foreach ($filas as $fila) {
+              ?>
+            <div class="bar">
+              <div class="title"><?php echo $fila->periodo; ?></div>
+              <div class="value tooltips" data-original-title="<?php echo ($fila->resultado); ?>" data-toggle="tooltip" data-placement="top"><?php echo ($fila->resultado)."%"; ?></div>
+
+            </div>
+
+
+          <?php
+              }
+
+            }else{
+              ?>
+
+
+                <div class="alert alert-danger"><b>Oh no!</b>Aún no existen datos para mostar.</div>
+
+
+              <?php
+            }
+          ?>
+          </div>
+
+
+
+  </div>
+  </div>
+</div>
 <?php else: ?>
   <div class="row mt">
     <div class="col-md-12">
@@ -175,8 +239,10 @@
     <!-- /col-md-12 -->
   </div>
 <?php endif; ?>
+<script src="recursos/dashio/lib/xchart/d3.v3.min.js"></script>
+  <script src="recursos/dashio/lib/xchart/xcharts.min.js"></script>";
 <script>
-function ver_grafico(nombre,periodo,resultado,rojo,amarillo,verde) {
+  function ver_grafico(nombre,periodo,resultado,rojo,amarillo,verde) {
   const dataSource = {
   chart: {
     caption: nombre,
@@ -226,6 +292,114 @@ function ver_grafico(nombre,periodo,resultado,rojo,amarillo,verde) {
   }).render();
 
 }
+</script>
+<script>
+<?php
+  if ($fuente->respuesta) {
+    $filas=$fuente->resultado;
+    ?>
+    (function() {
+                var data = [{
+              "xScale": "ordinal",
+              "comp": [],
+              "main": [{
+                "className": ".main.l1",
+                "data": [
+                  <?php
+                    foreach ($filas as $fila) {?>
+                  {
+                  "y": "<?php echo $fila->resultado; ?>",
+                  "x": "<?php echo $fila->periodo; ?>-11-19T00:00:00"
+                },
+                  <?php } ?>
+                ]
+              }],
+              "type": "line-dotted",
+              "yScale": "linear"
+            }, {
+              "xScale": "ordinal",
+              "comp": [],
+              "main": [{
+                "className": ".main.l1",
+                "data": [
+                  <?php
+                    foreach ($filas as $fila) {?>
+                      {
+                      "y": "<?php echo $fila->resultado; ?>",
+                      "x": "<?php echo $fila->periodo; ?>-11-20T00:00:00"
+                    },
+                  <?php } ?>
+                ]
+              }],
+              "type": "cumulative",
+              "yScale": "linear"
+            }, {
+              "xScale": "ordinal",
+              "comp": [],
+              "main": [{
+                "className": ".main.l1",
+                "data": [
+                  <?php
+                    foreach ($filas as $fila) {?>
+                      {
+                      "y": "<?php echo $fila->resultado; ?>",
+                      "x": "<?php echo $fila->periodo; ?>-11-19T00:00:00"
+                    },
+                  <?php } ?>
+                ]
+              }],
+              "type": "bar",
+              "yScale": "linear"
+            }];
+            var order = [0, 1, 0, 2],
+              i = 0,
+              xFormat = d3.time.format('%Y'),
+              chart = new xChart('line-dotted', data[order[i]], '#chart', {
+                axisPaddingTop: 5,
+                dataFormatX: function(x) {
+                  return new Date(x);
+                },
+                tickFormatX: function(x) {
+                  return xFormat(x);
+                },
+                timing: 1250
+              }),
+              rotateTimer,
+              toggles = d3.selectAll('.multi button'),
+              t = 3500;
+
+            function updateChart(i) {
+              var d = data[i];
+              chart.setData(d);
+              toggles.classed('toggled', function() {
+                return (d3.select(this).attr('data-type') === d.type);
+              });
+              return d;
+            }
+
+            toggles.on('click', function(d, i) {
+              clearTimeout(rotateTimer);
+              updateChart(i);
+            });
+
+            function rotateChart() {
+              i += 1;
+              i = (i >= order.length) ? 0 : i;
+              var d = updateChart(order[i]);
+              rotateTimer = setTimeout(rotateChart, t);
+            }
+            rotateTimer = setTimeout(rotateChart, t);
+          }());
+
+        <?php
+
+  } else {
+echo "<div class='alert alert-danger'><b>Oh no!</b>Aún no existen datos para mostar.</div>";
+  }
+ ?>
+
+
+//
 
 
 </script>

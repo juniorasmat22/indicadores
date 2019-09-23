@@ -7,9 +7,9 @@
     <div class="col-lg-12">
         <div class="form">
           <form class="cmxform form-horizontal style-form" method="post" action="?c=subproceso&a=editar" id="formEditar" autocomplete="off" >
-              <input type="hidden" name="idSubproceso" >
               <input type="hidden" name="idProceso">
-
+              <input type="hidden" name="idSubPro">
+              <input type="hidden" name="idSubPro">
               <div class="form-group ">
                 <label for="codigo" class="control-label col-lg-2">Código</label>
                 <div class="col-lg-10">

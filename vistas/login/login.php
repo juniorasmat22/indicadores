@@ -38,9 +38,9 @@
       <form class="form-login" id="formLogin"  method="post" action="index.php">
         <h2 class="form-login-heading">Inicio de Sesión</h2>
         <div class="login-wrap">
-          <input type="text"  name="usuario" class="form-control" placeholder="Usuario" autofocus>
+          <input type="text"  name="usuario" class="form-control" placeholder="Usuario" autofocus required title="Debe Ingresar su Usuario" minlength="4">
           <br>
-          <input type="password"  name="pass" class="form-control" placeholder="Password">
+          <input type="password"  name="pass" class="form-control" placeholder="Password" required title="Se requiere su Contraseña">
           <!--<label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
             <span class="pull-right">
@@ -55,12 +55,12 @@
             <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
             <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
           </div>-->
-          <div class="registration">
+          <!--<div class="registration">
             No tienes una cuenta, aun?<br/>
             <a class="" href="#">
               Create una aquí
               </a>
-          </div>
+          </div>-->
         </div>
         <!-- Modal -->
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">

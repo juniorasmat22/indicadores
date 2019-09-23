@@ -6,6 +6,7 @@ DROP procedure if exists sp_proceso_crud $$
 CREATE PROCEDURE sp_proceso_crud(
   idProceso int,
   idMapaProcesos int,
+  codigo varchar(50),
   tipo varchar(40),
   nombre varchar(50),
   descripcion varchar(200),
@@ -19,13 +20,14 @@ BEGIN
 
   -- crear
 	if opcion=1 then
-		insert proceso (id_mapa_procesos,tipo,nombre,descripcion,estado)
-		values (idMapaProcesos,tipo,nombre,descripcion,estado);
+		insert proceso (id_mapa_procesos,codigo,tipo,nombre,descripcion,estado)
+		values (idMapaProcesos,codigo,tipo,nombre,descripcion,estado);
    end if;
 
   -- editar
   if opcion=2 then
     update proceso set
+      codigo=codigo,
       nombre=nombre,
       tipo=tipo,
       descripcion=descripcion,

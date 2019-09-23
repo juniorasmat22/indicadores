@@ -10,6 +10,12 @@
             <input type="hidden" name="idIndicador">
             <input type="hidden" name="idSubproceso">
             <div class="form-group ">
+              <label for="codigo" class="control-label col-lg-2">Código</label>
+              <div class="col-lg-10">
+                <input class=" form-control" required id="codigo" name="codigo" type="text"  />
+              </div>
+            </div>
+            <div class="form-group ">
               <label for="descripcion" class="control-label col-lg-2">Nombre</label>
               <div class="col-lg-10">
                   <textarea class="form-control " required id="descripcion" name="descripcion"></textarea>
@@ -77,7 +83,7 @@
             </div>
           </div>
           <div class="form-group ">
-            <label for="verde" class="control-label col-lg-2">Rango Vojo</label>
+            <label for="verde" class="control-label col-lg-2">Rango Verde</label>
             <div class="col-lg-10">
                  <input type="number" class="form-control " required id="verde" name="verde" min="1" max="100" pattern="[0-9]+"  >
             </div>

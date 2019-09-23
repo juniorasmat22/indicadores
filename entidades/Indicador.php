@@ -6,6 +6,7 @@ class Indicador extends Entidad
 {
   public $idIndicador;
   public $idSubproceso;
+  public $codigo;
   public $descripcion;
   public $meta;//objetivo
   public $iniciativas;
@@ -22,6 +23,7 @@ class Indicador extends Entidad
   public function setConsulta($filaConsulta){
     $this->idIndicador=$this->obtenerColumna($filaConsulta,'id_indicador');
     $this->idSubproceso=$this->obtenerColumna($filaConsulta,'id_sub_proceso');
+    $this->codigo=$this->obtenerColumna($filaConsulta,'codigo');
     $this->descripcion=$this->obtenerColumna($filaConsulta,'descripcion');
     $this->meta=$this->obtenerColumna($filaConsulta,'meta');
     $this->iniciativas=$this->obtenerColumna($filaConsulta,'iniciativas');
@@ -39,27 +41,29 @@ class Indicador extends Entidad
   public function bindValues($statement){
     $statement->bindValue(1,$this->idIndicador,PDO::PARAM_INT);
     $statement->bindValue(2,$this->idSubproceso,PDO::PARAM_INT);
-    $statement->bindValue(3,$this->descripcion,PDO::PARAM_STR);
-    $statement->bindValue(4,$this->meta,PDO::PARAM_STR);
-    $statement->bindValue(5,$this->iniciativas,PDO::PARAM_STR);
-    $statement->bindValue(6,$this->responsable,PDO::PARAM_STR);
-    $statement->bindValue(7,$this->lineaBase,PDO::PARAM_STR);
-    $statement->bindValue(8,$this->frecuencia,PDO::PARAM_STR);
-    $statement->bindValue(9,$this->estado,PDO::PARAM_INT);
-    $statement->bindValue(10,$this->tipo,PDO::PARAM_STR);
-    $statement->bindValue(11,$this->unidad,PDO::PARAM_STR);
-    $statement->bindValue(12,$this->fv,PDO::PARAM_STR);
-    $statement->bindValue(13,$this->rojo,PDO::PARAM_INT);
-    $statement->bindValue(14,$this->amarillo,PDO::PARAM_INT);
-    $statement->bindValue(15,$this->verde,PDO::PARAM_INT);
-    $statement->bindValue(16,$this->opcion,PDO::PARAM_INT);
-		$statement->bindValue(17,$this->pagina,PDO::PARAM_INT);
+    $statement->bindValue(3,$this->codigo,PDO::PARAM_STR);
+    $statement->bindValue(4,$this->descripcion,PDO::PARAM_STR);
+    $statement->bindValue(5,$this->meta,PDO::PARAM_STR);
+    $statement->bindValue(6,$this->iniciativas,PDO::PARAM_STR);
+    $statement->bindValue(7,$this->responsable,PDO::PARAM_STR);
+    $statement->bindValue(8,$this->lineaBase,PDO::PARAM_STR);
+    $statement->bindValue(9,$this->frecuencia,PDO::PARAM_STR);
+    $statement->bindValue(10,$this->estado,PDO::PARAM_INT);
+    $statement->bindValue(11,$this->tipo,PDO::PARAM_STR);
+    $statement->bindValue(12,$this->unidad,PDO::PARAM_STR);
+    $statement->bindValue(13,$this->fv,PDO::PARAM_STR);
+    $statement->bindValue(14,$this->rojo,PDO::PARAM_INT);
+    $statement->bindValue(15,$this->amarillo,PDO::PARAM_INT);
+    $statement->bindValue(16,$this->verde,PDO::PARAM_INT);
+    $statement->bindValue(17,$this->opcion,PDO::PARAM_INT);
+		$statement->bindValue(18,$this->pagina,PDO::PARAM_INT);
     return $statement;
   }
 
   public function set($metodo){
     $this->idIndicador 	  = $metodo('idIndicador');
     $this->idSubproceso   = $metodo('idSubproceso');
+    $this->codigo	        = $metodo('codigo');
     $this->descripcion	  = $metodo('descripcion');
     $this->meta           = $metodo('meta');
     $this->iniciativas	  = $metodo('iniciativas');

@@ -1,5 +1,5 @@
 <table class="table table-striped table-advance table-hover">
-  <h4><i class="fa fa-angle-right"></i> Listado de Formula</h4>
+  <h4><i class="fa fa-angle-right"></i> Listado de Fórmula</h4>
   <hr>
   <thead>
     <tr>

@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <meta name="Junior Asmat Nunja" content="Dashboard">
+  <meta name="keyword" content="Gestion de Indicadores para el programa de Enfermería">
   <title>Oficina de Calidad-Enfermería UNT</title>
 
   <!-- Favicons -->
@@ -17,6 +17,7 @@
   <link href="recursos/dashio/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
   <link href="recursos/dashio/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
   <link rel="stylesheet" type="text/css" href="recursos/dashio/css/zabuto_calendar.css">
   <link rel="stylesheet" type="text/css" href="recursos/dashio/lib/gritter/css/jquery.gritter.css" />
   <!-- Custom styles for this template -->
@@ -25,6 +26,7 @@
   <link href="recursos/dashio/css/style-responsive.css" rel="stylesheet">
   <script src="recursos/dashio/lib/chart-master/Chart.js"></script>
   <link rel="stylesheet" href="recursos/dashio/css/to-do.css">
+
 <!--imagenes-->
   <link rel="stylesheet" type="text/css" href="recursos/dashio/lib/bootstrap-fileupload/bootstrap-fileupload.css" />
 <!--grafico -->
@@ -49,7 +51,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>ENF<span>UNT</span></b></a>
+      <a href="?" class="logo"><b>ENF<span>UNT</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -266,6 +268,8 @@
               </a>
             <ul class="sub">
               <li class="active"><a href="?c=empresa">Generalidades</a></li>
+              <li class="active"><a href="?c=mapaProcesos&a=ver_mapa&idMapaProcesos=1">Mapa de Procesos</a></li>
+              <li class="active"><a href="?c=empresa">Indicadores</a></li>
               <!--<li><a href="buttons.html">Buttons</a></li>
               <li><a href="panels.html">Panels</a></li>
               <li><a href="font_awesome.html">Font Awesome</a></li>-->
@@ -286,7 +290,12 @@
               </ul>
             </li>
           <?php endif; ?>
-
+          <li >
+            <a  href="?c=curso">
+              <i class="fa fa-book"></i>
+              <span>Cursos</span>
+              </a>
+          </li>
 
 
         </ul>
@@ -312,7 +321,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>ENFERMERÍA-UNT</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
           <!--
@@ -339,6 +348,7 @@
   <script src="recursos/dashio/lib/jquery.sparkline.js"></script>
   <!--common script for all pages-->
   <script src="recursos/dashio/lib/common-scripts.js"></script>
+
   <!--script for this page-->
   <script src="recursos/dashio/lib/sparkline-chart.js"></script>
     <script src="recursos/dashio/lib/zabuto_calendar.js"></script>
@@ -362,7 +372,11 @@
   if ($var=="formula") {
     echo "<script src='recursos/js/formula.js'></script>";
   }
-  
+  if ($var=="indicador") {
+    echo "<script src='recursos/js/grafico.js'></script>";
+  }
+
+
   ?>
 </body>
 

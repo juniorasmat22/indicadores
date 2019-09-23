@@ -89,7 +89,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="custom-box">
           <div class="servicetitle">
-            <h4>Gráfico</h4>
+            <h4>Gráfico por Curso y Periodo</h4>
             <hr>
           </div>
 
@@ -101,7 +101,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="custom-box">
           <div class="servicetitle">
-            <h4>Data Histórica-General</h4>
+            <h4>Data Histórica-General Por Curso y Periodo</h4>
             <hr>
           </div>
           <?php $bool=false; ?>
@@ -112,6 +112,7 @@
               <thead>
                 <tr>
                   <th><i class="fa fa-bullhorn"></i> Periodo</th>
+                  <th><i class="fa fa-bookmark"></i> Curso</th>
                   <th><i class="fa fa-bookmark"></i> Nro Sedes</th>
                   <th class="hidden-phone"><i class="fa fa-question-circle"></i>Resultado</th>
                   <th><i class=" fa fa-edit"></i> Opciones</th>
@@ -127,6 +128,9 @@
                 <tr>
                   <td>
                     <a><?php echo $fila->periodo; ?></a>
+                  </td>
+                  <td>
+                    <?php echo $fila->curso; ?>
                   </td>
                   <td>
                     <?php if ($fila->param1<3): $bool=true;?>
@@ -177,11 +181,134 @@
     <div class="col-lg-12">
       <div class="custom-box">
         <div class="servicetitle">
-          <h4><?php echo $respuesta->resultado->descripcion; ?></h4>
+          <h4><?php echo $respuesta->resultado->descripcion.'-Por Curso y Periodo'; ?>
+          </h4>  <span><select id="periodo" name="periodo" class="pull-right" required onchange="llenar_grafico(<?php echo $_GET['idIndicador'] ;?>);">
+            <option value="" disabled selected >Seleccione una opción</option>
+            <?php if ($periodo->respuesta):
+              $filas=$periodo->resultado;
+              foreach ($filas as $fila){
+                ?>
+                <option value="<?php echo $fila->periodo; ?>"><?php echo $fila->periodo; ?></option>
+
+                <?php
+
+              } ?>
+
+            <?php else: ?>
+                <option value="" disabled  >Debe Ingresar Datos</option>
+            <?php endif; ?>
+              </select></span>
           <hr>
         </div>
 
-          <?php if ($fuente_general->respuesta){?>
+            <div class="custom-bar-chart" id="graficoUno">
+
+
+
+              </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="row mt">
+    <div class="col-lg-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="custom-box">
+          <div class="servicetitle">
+            <h4>Gráfico-Por periodo</h4>
+            <hr>
+          </div>
+
+          <div id="chart-container-2"></div>
+        </div>
+        <!-- end custombox -->
+      </div>
+      <!-- end col-4 -->
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="custom-box">
+          <div class="servicetitle">
+            <h4>Data Histórica-General Por Periodo</h4>
+            <hr>
+          </div>
+
+          <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <table class="table table-striped table-advance table-hover table-responsive">
+              <thead>
+                <tr>
+                  <th><i class="fa fa-bullhorn"></i> Periodo</th>
+                  <th><i class="fa fa-bookmark"></i> Nro Curso</th>
+
+                  <th class="hidden-phone"><i class="fa fa-question-circle"></i>Resultado</th>
+                  <th><i class=" fa fa-edit"></i> Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                 if($fuente_general_curso->respuesta){
+
+                   $filas=$fuente_general_curso->resultado;
+                   foreach ($filas as $fila) {
+                     ?>
+                <tr>
+                  <td>
+                    <a><?php echo $fila->periodo; ?></a>
+                  </td>
+
+                  <td>
+                    <?php if ($fila->param1<3): $bool=true;?>
+
+                    <?php endif; ?>
+                    <?php echo $fila->param1.$retVal = ($fila->param1<3) ? "<b class='text-danger'>*</b>": "" ; ?>
+                  </td>
+
+                  <td class="hidden-phone"><?php echo $fila->resultado; ?></td>
+                  <td>
+                      <button class="btn btn-info btn-xs" onclick="ver_grafico('chart-container-2','<?php echo $respuesta->resultado->descripcion; ?>','<?php echo $fila->periodo; ?>',<?php echo $fila->resultado; ?>,<?php echo $respuesta->resultado->rojo; ?>,<?php echo $respuesta->resultado->amarillo; ?>,<?php echo $respuesta->resultado->verde; ?>);"><i class="fa fa-dashboard"></i> semáforo</button >
+                  </td>
+                </tr>
+
+                <?php
+                    }
+                  }else{
+                    ?>
+                    <tr>
+
+                      <td colspan="6"><div class="alert alert-danger"><b>Oh no!</b>Aún no existen datos para mostar.</div></td>
+
+                    </tr>
+                    <?php
+                  }
+                ?>
+              </tbody>
+            </table>
+
+
+
+        </div>
+          </div>
+
+
+        </div>
+        <!-- end custombox -->
+      </div>
+      <!-- end col-4 -->
+
+    </div>
+    <!--  /col-lg-12 -->
+  </div>
+
+  <div class="row mt">
+    <div class="col-lg-12">
+      <div class="custom-box">
+        <div class="servicetitle">
+          <h4><?php echo $respuesta->resultado->descripcion.'-Por Periodo'; ?></h4>
+          <hr>
+        </div>
+
+          <?php if ($fuente_general_curso->respuesta){?>
             <div class="custom-bar-chart">
                 <ul class="y-axis">
                   <li><span>100</span></li>
@@ -192,11 +319,11 @@
                   <li><span>0</span></li>
                 </ul>
                 <?php
-                  $filas=$fuente_general->resultado;
+                  $filas=$fuente_general_curso->resultado;
                   foreach ($filas as $fila) {
                   ?>
                 <div class="bar">
-                  <div class="title"><?php echo $fila->periodo; ?></div>
+                  <div class="title" ><?php echo $fila->periodo; ?></div>
                   <div class="value tooltips" data-original-title="<?php echo ($fila->resultado); ?>" data-toggle="tooltip" data-placement="top"><?php echo ($fila->resultado)."%"; ?></div>
 
                 </div>
@@ -221,8 +348,8 @@
 
     </div>
   </div>
-  </div>
 
+  </div>
   <div class="row">
     <div class="col-lg-12">
       <div class="custom-box">
@@ -282,56 +409,55 @@
   </div>
         <!-- /panel-body -->
 </div>
+  <script>
+    function ver_grafico(id,nombre,periodo,resultado,rojo,amarillo,verde) {
+    const dataSource = {
+    chart: {
+      caption: nombre,
+      subcaption: periodo,
+      lowerlimit: "0",
+      upperlimit: "100",
+      showvalue: "1",
+      numbersuffix: "%",
+      theme: "gammel",
+      chartBottomMargin: "5",
+      showtooltip: "0"
+    },
+    colorrange: {
+      color: [
+        {
+          minvalue: "0",
+          maxvalue: rojo,
+          code: "#F2726F"
+        },
+        {
+          minvalue:rojo,
+          maxvalue: amarillo,
+          code: "#FFC533"
+        },
+        {
+          minvalue: amarillo,
+          maxvalue: verde,
+          code: "#62B58F"
+        }
+      ]
+    },
+    dials: {
+      dial: [
+        {
+          value: resultado
+        }
+      ]
+    }
+    };
+    var myChart = new FusionCharts({
+      type: "angulargauge",
+      renderAt: id,
+      width: "100%",
+      height: "100%",
+      dataFormat: "json",
+      dataSource
+    }).render();
 
-<script>
-  function ver_grafico(id,nombre,periodo,resultado,rojo,amarillo,verde) {
-  const dataSource = {
-  chart: {
-    caption: nombre,
-    subcaption: periodo,
-    lowerlimit: "0",
-    upperlimit: "100",
-    showvalue: "1",
-    numbersuffix: "%",
-    theme: "gammel",
-    chartBottomMargin: "5",
-    showtooltip: "0"
-  },
-  colorrange: {
-    color: [
-      {
-        minvalue: "0",
-        maxvalue: rojo,
-        code: "#F2726F"
-      },
-      {
-        minvalue:rojo,
-        maxvalue: amarillo,
-        code: "#FFC533"
-      },
-      {
-        minvalue: amarillo,
-        maxvalue: verde,
-        code: "#62B58F"
-      }
-    ]
-  },
-  dials: {
-    dial: [
-      {
-        value: resultado
-      }
-    ]
   }
-  };
-  var myChart = new FusionCharts({
-    type: "angulargauge",
-    renderAt: id,
-    width: "100%",
-    height: "100%",
-    dataFormat: "json",
-    dataSource
-  }).render();
-
-}
-</script>
+  </script>

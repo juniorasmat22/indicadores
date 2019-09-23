@@ -9,6 +9,12 @@
           <form class="cmxform form-horizontal style-form" method="post" action="?c=subproceso&a=crear" id="formCrear" autocomplete="off">
             <input type="hidden" name="idProceso" value="<?php echo $_GET['idProceso']; ?>">
             <div class="form-group ">
+              <label for="codigo" class="control-label col-lg-2">Código</label>
+              <div class="col-lg-10">
+                <input class=" form-control" required id="codigo" name="codigo" type="text" />
+              </div>
+            </div>
+            <div class="form-group ">
               <label for="nombre" class="control-label col-lg-2">Nombre</label>
               <div class="col-lg-10">
                 <input class=" form-control" required id="nombre" name="nombre" type="text" />

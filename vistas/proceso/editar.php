@@ -19,6 +19,12 @@
                     </select>
                 </div>
               </div>
+              <div class="form-group ">
+                <label for="codigo" class="control-label col-lg-2">Código</label>
+                <div class="col-lg-10">
+                  <input class=" form-control" required id="codigo" name="codigo" type="text" />
+                </div>
+              </div>
             <div class="form-group ">
               <label for="nombre" class="control-label col-lg-2">Nombre</label>
               <div class="col-lg-10">
@@ -42,7 +48,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Registrar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
             </div>
           </form>
         </div>

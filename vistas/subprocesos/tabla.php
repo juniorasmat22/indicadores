@@ -85,7 +85,7 @@ $subProcesoControlador = new SubProcesoControlador();
 
                             <td>
                               <!-- <a <?php //echo "href='?c=subproceso&a=get&idSubproceso=$fila3->idSubproceso'"; ?> class="btn btn-success btn-xs editar3"><i class="fa fa-check"></i>gestionar</a>-->
-                              <a <?php echo "href='?c=subproceso&a=get&idProceso=$fila3->idProceso&idSubproceso=$fila3->idSubproceso'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+                              <a <?php echo "href='?c=subproceso&a=get&idProceso=$fila3->idProceso&idSubproceso=$fila3->idSubproceso'"; ?> class="btn btn-primary btn-xs editar4"><i class="fa fa-pencil"></i></a>
                               <a <?php echo "href='?c=subproceso&a=eliminar&idSubproceso=$fila3->idSubproceso'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
                             </td>
                           </tr>
@@ -124,7 +124,7 @@ $subProcesoControlador = new SubProcesoControlador();
 
                   <td>
                     <a <?php echo "href='?c=subproceso&a=get&idSubproceso=$fila2->idSubproceso'"; ?> class="btn btn-success btn-xs editar3"><i class="fa fa-check"></i>gestionar</a>
-                    <a <?php echo "href='?c=subproceso&a=get&idProceso=$fila2->idProceso&idSubproceso=$fila2->idSubproceso'"; ?> class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+                    <a <?php echo "href='?c=subproceso&a=get&idProceso=$fila2->idProceso&idSubproceso=$fila2->idSubproceso'"; ?> class="btn btn-primary btn-xs editar4"><i class="fa fa-pencil"></i></a>
                     <a <?php echo "href='?c=subproceso&a=eliminar&idSubproceso=$fila2->idSubproceso'"; ?>class="btn btn-danger btn-xs eliminar"><i class="fa fa-trash-o "></i></a>
                   </td>
                 </tr>

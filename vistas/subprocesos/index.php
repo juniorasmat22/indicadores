@@ -38,15 +38,23 @@
       </div>
     </div>
   </div>
-
+  <!-- Modal Editar subNiveles-->
+  <div class="modal fade" id="editarModalSubnivel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <?php require 'editarSubnivel.php';?>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript">
     function funcionOpcionEditar(subproceso){
       $('#formEditar input[name="idSubproceso"]').val(subproceso.idSubproceso);
       $('#formEditar input[name="idProceso"]').val(subproceso.idProceso);
+      $('#formEditar input[name="codigo"]').val(subproceso.codigo);
       $('#formEditar input[name="nombre"]').val(subproceso.nombre);
       $('#formEditar textarea[name="descripcion"]').val(subproceso.descripcion);
       $('#formEditar select[name="estado"]').val(subproceso.estado);
-      $('#formEditar select[name="idSubPro"]').val(subproceso.idSubPro);
+      $('#formEditar input[name="idSubPro"]').val(subproceso.idSubPro);
     }
   </script>
   <script type="text/javascript">

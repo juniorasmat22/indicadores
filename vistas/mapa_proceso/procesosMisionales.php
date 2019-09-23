@@ -106,9 +106,10 @@ $verifica_subprocesos=false;
                                                                     </div>
                                                                   </div>
                                                                 </div>
-                                                                <div class="pull-right hidden-phone">
+                                                                <div class="pull-right">
                                                                   <a href="?c=indicador&a=listarIndicadores&idSubproceso=<?php echo $fila4->idSubproceso; ?>&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>&proceso=<?php echo $fila4->nombre; ?>" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a>
-                                                                  <a href="?c=subproceso&a=get&idProceso=<?php echo $fila->idProceso; ?>&idSubproceso=<?php echo $fila4->idSubproceso;?>'" class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+                                                                  <!--<a href="?c=subproceso&a=get&idProceso=<?php //echo $fila->idProceso; ?>&idSubproceso=<?php // echo $fila4->idSubproceso;?>'" class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>-->
+                                                                  <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                                                   <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                                 </div>
                                                               </div>
@@ -130,9 +131,10 @@ $verifica_subprocesos=false;
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div class="pull-right hidden-phone">
-                                                        <a href="?c=indicador&a=listarIndicadores&idSubproceso=<?php echo $fila3->idSubproceso; ?>&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>&proceso=<?php echo $fila3->nombre; ?>" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a>
-                                                        <a href="?c=subproceso&a=get&idProceso=<?php echo $fila->idProceso; ?>&idSubproceso=<?php echo $fila3->idSubproceso;?>'" class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>
+                                                      <div class="pull-right ">
+                                                        <?php echo $retVal = (!$verifica_subprocesos3) ? "<a href='?c=indicador&a=listarIndicadores&idSubproceso=$fila->idSubproceso&idMapaProcesos=$_GET[idMapaProcesos]&proceso=$fila->nombre' class='btn btn-success btn-xs'><i class='fa fa-check'></i></a >" :  ""  ;?>
+                                                        <!--<a href="?c=subproceso&a=get&idProceso=<?php// echo $fila->idProceso; ?>&idSubproceso=<?php //echo $fila3->idSubproceso;?>'" class="btn btn-primary btn-xs editar"><i class="fa fa-pencil"></i></a>-->
+                                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                                       </div>
                                                     </div>
@@ -152,7 +154,7 @@ $verifica_subprocesos=false;
                                                 </div>
                                               </div>
                                             </div>
-                                            <div class="pull-right hidden-phone">
+                                            <div class="pull-right">
                                               <?php echo $retVal = (!$verifica_subprocesos) ? "<a href='?c=indicador&a=listarIndicadores&idSubproceso=$fila->idSubproceso&idMapaProcesos=$_GET[idMapaProcesos]&proceso=$fila->nombre' class='btn btn-success btn-xs'><i class='fa fa-check'></i></a >" :  ""  ;?>
 
                                               <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>

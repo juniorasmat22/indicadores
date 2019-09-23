@@ -6,6 +6,7 @@ DROP procedure if exists sp_indicador_crud $$
 CREATE PROCEDURE sp_indicador_crud(
   idIndicador int,
   idSubProceso int,
+  codigo varchar(45),
   descripcion varchar(100),
   meta varchar(200),
   iniciativas varchar(200),
@@ -28,14 +29,15 @@ BEGIN
 
   -- crear
 	if opcion=1 then
-		insert indicador (id_sub_proceso,descripcion,meta,iniciativas,responsable,linea_base,frecuencia,estado,tipo,unidad,fv,rojo,amarillo,verde)
-		values (idSubProceso,descripcion,meta,iniciativas,responsable,lineaBase,frecuencia,estado,tipo,unidad,fv,rojo,amarillo,verde);
+		insert indicador (id_sub_proceso,codigo,descripcion,meta,iniciativas,responsable,linea_base,frecuencia,estado,tipo,unidad,fv,rojo,amarillo,verde)
+		values (idSubProceso,codigo,descripcion,meta,iniciativas,responsable,lineaBase,frecuencia,estado,tipo,unidad,fv,rojo,amarillo,verde);
    end if;
 
   -- editar
   if opcion=2 then
     update indicador set
       id_sub_proceso=idSubProceso,
+      codigo=codigo,
       descripcion=descripcion,
       meta=meta,
       iniciativas=iniciativas,

@@ -43,6 +43,63 @@ $(document).ready( function () {
       }
     });
   });
+  //opcion editar 2
+  $(document).on('click','.editar2',function(e){
+    e.preventDefault();
+    enviarLink($(this).attr('href'),function(data){
+      try{
+        respuesta=JSON.parse(data);
+        if(respuesta.respuesta){
+          $("#editarModal2").modal('show');
+          funcionOpcionEditar2(respuesta.resultado);
+        }else{
+          alert(respuesta.mensaje);
+        }
+
+      }catch(e){
+        mostrarErrorPhp(data);
+        alert(e);
+      }
+    });
+  });
+  //opcion editar subNiveles
+  $(document).on('click','.editar4',function(e){
+    e.preventDefault();
+    enviarLink($(this).attr('href'),function(data){
+      try{
+        respuesta=JSON.parse(data);
+        if(respuesta.respuesta){
+          $("#editarModalSubnivel").modal('show');
+          funcionOpcionEditar(respuesta.resultado);
+        }else{
+          alert(respuesta.mensaje);
+        }
+
+      }catch(e){
+        mostrarErrorPhp(data);
+        alert(e);
+      }
+    });
+  });
+  //opcion editar 3
+  $(document).on('click','.editar3',function(e){
+    e.preventDefault();
+    enviarLink($(this).attr('href'),function(data){
+      try{
+        respuesta=JSON.parse(data);
+        if(respuesta.respuesta){
+          $("#crearModalSubnivel").modal('show');
+          funcionPasarProceso(respuesta.resultado);
+        }else{
+          alert(respuesta.mensaje);
+        }
+
+      }catch(e){
+        mostrarErrorPhp(data);
+        alert(e);
+      }
+    });
+  });
 
   //opcion eliminar
   $(document).on('click','.eliminar',function(e){

@@ -1,3 +1,8 @@
+<?php
+namespace controladores;
+$curso = new CursoControlador();
+$respuesta = $curso->modelo->listar();
+ ?>
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
   <h4 class="modal-title" id="myModalLabel">Registar Data Fuente</h4>
@@ -9,6 +14,32 @@
           <form class="cmxform form-horizontal style-form" method="post" action="?c=fuente&a=crear" id="formCrear" autocomplete="off">
               <input type="hidden" name="idIndicador" value="<?php echo $_GET['idIndicador']; ?>">
               <input type="hidden" name="tipo" value="<?php echo $dataModal->resultado->tipo; ?>">
+              <div class="form-group ">
+                <label for="estado" class="control-label col-lg-4">Sede</label>
+                <div class="col-lg-8">
+                  <select id="sede" name="sede" class="form-control" required>
+                      <option value="1">TRUJILLO</option>
+                      <option value="2">EL VALLE</option>
+                      <option value="3">HUAMACHUCO</option>
+                    </select>
+                </div>
+              </div>
+              <?php if ($_GET['idIndicador']==26||$_GET['idIndicador']==27): ?>
+                <div class="form-group ">
+                  <label for="curso" class="control-label col-lg-4">Curso</label>
+                  <div class="col-lg-8">
+                    <select id="idCurso" name="idCurso" class="form-control" required>
+                      <?php if($respuesta->respuesta): $fila=$respuesta->resultado->objetos ;?>
+                        <?php foreach ($fila as $cur): ?>
+                          <option value="<?php echo $cur->idCurso; ?>"><?php echo $cur->nombre; ?></option>
+                        <?php endforeach ?>
+                      <?php else: ?>
+                        <option value="" disabled >DEBE REGISTRAR UN CURSO</option>
+                      <?php endif ?>
+                      </select>
+                  </div>
+                </div>
+              <?php endif; ?>
               <div class="form-group" >
                 <label for="periodo" class="control-label col-lg-4">Periodo</label>
                 <div class="col-lg-8">
@@ -84,6 +115,7 @@
                   </select>
               </div>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerar</button>
               <button type="submit" class="btn btn-primary">Registar</button>

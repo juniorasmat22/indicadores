@@ -10,11 +10,18 @@
             <input type="hidden" name="idProceso">
             <input type="hidden" name="idSubPro">
             <div class="form-group ">
+              <label for="codigo" class="control-label col-lg-2">Código</label>
+              <div class="col-lg-10">
+                <input class=" form-control" required id="codigo" name="codigo" type="text" />
+              </div>
+            </div>
+            <div class="form-group ">
               <label for="nombre" class="control-label col-lg-2">Nombre</label>
               <div class="col-lg-10">
                 <input class=" form-control" required id="nombre" name="nombre" type="text" />
               </div>
             </div>
+
             <div class="form-group ">
               <label for="descripcion" class="control-label col-lg-2">Descripción</label>
               <div class="col-lg-10">

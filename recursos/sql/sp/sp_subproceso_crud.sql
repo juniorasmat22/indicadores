@@ -6,6 +6,7 @@ DROP procedure if exists sp_subproceso_crud $$
 CREATE PROCEDURE sp_subproceso_crud(
   idSubProceso int,
   idProceso int,
+  codigo varchar(50),
   nombre varchar(50),
   descripcion varchar(200),
   estado int,
@@ -19,14 +20,15 @@ BEGIN
 
   -- crear
 	if opcion=1 then
-		insert subproceso (id_proceso,nombre,descripcion,estado,id_sub_nivel)
-		values (idProceso,nombre,descripcion,estado,idSubPro);
+		insert subproceso (id_proceso,codigo,nombre,descripcion,estado,id_sub_nivel)
+		values (idProceso,codigo,nombre,descripcion,estado,idSubPro);
    end if;
 
   -- editar
   if opcion=2 then
     update subproceso set
       id_proceso=idProceso,
+      codigo=codigo,
       nombre=nombre,
       descripcion=descripcion,
       id_sub_nivel=idSubPro,

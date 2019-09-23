@@ -3,7 +3,7 @@ namespace modelos;
 
 class SubProcesoModelo extends Modelo{
 	public function __construct(){
-		parent::__construct('sp_subproceso_crud(?,?,?,?,?,?,?,?)','SubProceso');
+		parent::__construct('sp_subproceso_crud(?,?,?,?,?,?,?,?,?)','SubProceso');
 	}
 	public function listar_subprocesos($SubProceso){//para el mapa de procesos
 		$SubProceso->opcion = 6;

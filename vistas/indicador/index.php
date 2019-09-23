@@ -34,6 +34,7 @@
     function funcionOpcionEditar(indicador){
       $('#formEditar input[name="idIndicador"]').val(indicador.idIndicador);
       $('#formEditar input[name="idSubproceso"]').val(indicador.idSubproceso);
+      $('#formEditar input[name="codigo"]').val(indicador.codigo);
       $('#formEditar textarea[name="descripcion"]').val(indicador.descripcion);
       $('#formEditar textarea[name="meta"]').val(indicador.meta);
       $('#formEditar textarea[name="iniciativas"]').val(indicador.iniciativas);

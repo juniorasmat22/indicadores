@@ -36,7 +36,7 @@ BEGIN
          set resultado=param1;
       END IF;
 		insert  fuente (id_indicador,sede,periodo,param1,param2,param3,resultado,inicio,fin,estado,id_curso)
-		values (idIndicador,sede,periodo,param1,param2,param3,resultado,inicio,fin,estado,idCurso);
+		values (idIndicador,sede,periodo,param1,param2,param3,Round(resultado,3),inicio,fin,estado,idCurso);
    end if;
 
   -- editar
@@ -57,7 +57,7 @@ BEGIN
       f.param2=param2,
       f.param3=param3,
       f.inicio=inicio,
-      f.resultado=resultado,
+      f.resultado=Round(resultado,3),
       f.id_curso=idCurso,
       f.fin=fin,
       f.estado = estado
@@ -103,13 +103,13 @@ BEGIN
       select * from fuente f  where f.id_indicador = idIndicador and f.sede=sede order by f.periodo;
     end if;
     if opcion=8 then
-    select count(f.periodo) as param1,sum(f.resultado)/(count(f.periodo)) as resultado,f.periodo from fuente f
+    select count(f.periodo) as param1,round(sum(f.resultado)/(count(f.periodo)),3) as resultado,f.periodo from fuente f
     where f.id_indicador=idIndicador
     group by f.periodo
     order by f.periodo ;
     end if;
     if opcion=9 then
-    select f.periodo,count(f.id_curso) as param1,sum(f.resultado)/(count(f.id_curso)) as resultado,f.id_curso,c.nombre
+    select f.periodo,count(f.id_curso) as param1,round(sum(f.resultado)/(count(f.id_curso)),3) as resultado,f.id_curso,c.nombre
     from fuente f
     inner join curso c on c.id_curso=f.id_curso
     where f.id_indicador=idIndicador
@@ -117,7 +117,7 @@ BEGIN
 order by f.id_curso ;
     end if;
     if opcion=10 then
-    select count(f.periodo) as param1,sum(f.resultado)/(count(f.periodo)) as resultado,f.periodo,c.nombre from fuente f
+    select count(f.periodo) as param1,round(sum(f.resultado)/(count(f.periodo)),3) as resultado,f.periodo,c.nombre from fuente f
       inner join curso c on c.id_curso=f.id_curso
     where f.id_indicador=idIndicador
     group by f.periodo , f.id_curso

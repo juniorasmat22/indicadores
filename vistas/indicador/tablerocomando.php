@@ -2,8 +2,9 @@
 
 <a href="?c=indicador&a=listarIndicadores&idSubproceso=<?php echo $_GET['idSubproceso']; ?>&idMapaProcesos=<?php echo $_GET['idMapaProcesos']; ?>&proceso=<?php echo $_GET['proceso'] ?>" type="button" class="btn btn-theme" ><i class="fa fa-eye"></i> Ver Indicadores</a>
 <a type="button" class="btn btn-theme04" href="?c=indicador&a=reporte&idIndicador=<?php echo $_GET['idIndicador']; ?>&proceso=<?php echo $_GET['proceso']; ?>" target="_blank"><i class="fa fa-file-pdf-o"></i> Imprimir</a>
+<button type="button" class="btn btn-theme04"  target="_blank" onclick="printDiv('area2')"><i class="fa fa-file-pdf-o"></i> Imprimir 2</button>
 <?php if ($respuesta->respuesta): ?>
-  <div class="row mt">
+  <div class="row mt" id="area2">
     <div class="col-md-12">
       <div class="content-panel">
           <table class="table table-advance table-hover table-bordered">
@@ -173,16 +174,18 @@
     <!--  /col-lg-12 -->
   </div>
 
-  <div class="row mt">
+  <div class="row mt" >
     <div class="col-lg-12">
       <div class="custom-box">
         <div class="servicetitle">
           <h4><?php echo $respuesta->resultado->descripcion; ?></h4>
+          <button type="button" class="btn btn-theme04" href="" target="_blank" onclick="printDiv('area1')"><i class="fa fa-file-pdf-o"></i> Imprimir</button>
+          <div class="row mt">
           <hr>
         </div>
 
           <?php if ($fuente_general->respuesta){?>
-            <div class="custom-bar-chart">
+            <div class="custom-bar-chart" id="area1">
                 <ul class="y-axis">
                   <li><span>100</span></li>
                   <li><span>80</span></li>
@@ -333,5 +336,17 @@
     dataSource
   }).render();
 
+}
+</script>
+<script>
+function printDiv(nombreDiv) {
+     var contenido= document.getElementById(nombreDiv).innerHTML;
+     var contenidoOriginal= document.body.innerHTML;
+
+     document.body.innerHTML = contenido;
+
+     window.print();
+
+     document.body.innerHTML = contenidoOriginal;
 }
 </script>

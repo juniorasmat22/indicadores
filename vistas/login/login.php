@@ -38,9 +38,9 @@
       <form class="form-login" id="formLogin"  method="post" action="index.php">
         <h2 class="form-login-heading">Inicio de Sesión</h2>
         <div class="login-wrap">
-          <input type="text"  name="usuario" class="form-control" placeholder="Usuario" autofocus required title="Debe Ingresar su Usuario" minlength="4">
+          <input type="text"  name="usuario" class="form-control" required placeholder="Usuario" autofocus  title="Debe Ingresar su Usuario" minlength="4">
           <br>
-          <input type="password"  name="pass" class="form-control" placeholder="Password" required title="Se requiere su Contraseña">
+          <input type="password"  name="pass" class="form-control" required placeholder="Password"  title="Se requiere su Contraseña">
           <!--<label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
             <span class="pull-right">
